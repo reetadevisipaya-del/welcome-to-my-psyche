@@ -512,7 +512,13 @@
           
           <!-- Essay 1 -->
           <article class="editorial-essay-card">
-            <div class="essay-icon">🪞</div>
+            <div class="essay-icon">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 3v18"/>
+                <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" opacity="0.25"/>
+              </svg>
+            </div>
             <h3 class="essay-title">The Shadow & The Cards</h3>
             <p class="essay-body">
               In Jungian depth psychology, the Shadow comprises everything we disown, conceal, or repress to gain social acceptance. When a challenging card like The Tower, The Devil, or Nine of Swords appears, it is not an omen of doom—it is a sacred invitation to integrate unacknowledged psychic material into conscious sovereignty.
@@ -524,7 +530,12 @@
 
           <!-- Essay 2 -->
           <article class="editorial-essay-card">
-            <div class="essay-icon">⏳</div>
+            <div class="essay-icon">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M5 22h14M5 2h14M17 2a7 7 0 0 0-5 5 7 7 0 0 0-5-5M17 22a7 7 0 0 1-5-5 7 7 0 0 1-5 5"/>
+                <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+              </svg>
+            </div>
             <h3 class="essay-title">Synchronicity: Meaningful Coincidence</h3>
             <p class="essay-body">
               Why do specific cards appear when you ask specific questions? Carl Jung termed this <em>synchronicity</em>—an acausal connecting principle where internal psychological states mirror external events. Shuffling cards randomizes the physical deck, allowing the subconscious to project its hidden blueprint upon the symbols.
@@ -536,7 +547,13 @@
 
           <!-- Essay 3 -->
           <article class="editorial-essay-card">
-            <div class="essay-icon">🌀</div>
+            <div class="essay-icon">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6" stroke-dasharray="2 3"/>
+                <circle cx="12" cy="12" r="2.5" fill="currentColor"/>
+              </svg>
+            </div>
             <h3 class="essay-title">The Archetypes of Individuation</h3>
             <p class="essay-body">
               The 22 Major Arcana cards depict 'The Fool's Journey'—an exact visual parallel to Jung's individuation process. From initial innocence (The Fool) through encounters with parental archetypes (The Empress & Emperor), crisis of values (The Lovers), solitary truth-seeking (The Hermit), to ultimate self-integration (The World).
@@ -598,15 +615,15 @@
         <!-- Right Column: Interactive Testimonial Screenshot Showcase -->
         <div class="testimonials-gallery-col">
           <div class="testimonial-tabs-bar">
-            <button class="test-tab-btn active">All Messages</button>
-            <button class="test-tab-btn">Campus Sessions</button>
-            <button class="test-tab-btn">Life & Relationship Clarity</button>
+            <button class="test-tab-btn active" data-filter="all">All Messages</button>
+            <button class="test-tab-btn" data-filter="campus">Campus Sessions</button>
+            <button class="test-tab-btn" data-filter="clarity">Life & Relationship Clarity</button>
           </div>
 
           <div class="testimonial-screenshots-grid">
             
             <!-- Arshaan Testimonial Card -->
-            <div class="screenshot-card" data-lightbox-src="assets/testimonials/testimonial-arshaan.jpeg" data-lightbox-caption="Arshaan: 'I used to not believe in these things... but after getting it with Smayra, she made me see my life properly which I was seeing in fragments. It was life changing for me.'">
+            <div class="screenshot-card" data-category="clarity" data-lightbox-src="assets/testimonials/testimonial-arshaan.jpeg" data-lightbox-caption="Arshaan: 'I used to not believe in these things... but after getting it with Smayra, she made me see my life properly which I was seeing in fragments. It was life changing for me.'">
               <img src="assets/testimonials/testimonial-arshaan.jpeg" alt="Testimonial screenshot from Arshaan" class="screenshot-img-thumb" loading="lazy">
               <div class="screenshot-card-overlay">
                 <div class="ss-client-name">Arshaan</div>
@@ -615,7 +632,7 @@
             </div>
 
             <!-- Jahnavi Testimonial Card -->
-            <div class="screenshot-card" data-lightbox-src="assets/testimonials/testimonial-jahnavi.jpeg" data-lightbox-caption="Jahnavi: 'Hey thanks a lot for today's session. I really feel overwhelmed rn and I really needed this. It must be exhausting for you too dealing with so many energies.'">
+            <div class="screenshot-card" data-category="clarity" data-lightbox-src="assets/testimonials/testimonial-jahnavi.jpeg" data-lightbox-caption="Jahnavi: 'Hey thanks a lot for today's session. I really feel overwhelmed rn and I really needed this. It must be exhausting for you too dealing with so many energies.'">
               <img src="assets/testimonials/testimonial-jahnavi.jpeg" alt="Testimonial screenshot from Jahnavi" class="screenshot-img-thumb" loading="lazy">
               <div class="screenshot-card-overlay">
                 <div class="ss-client-name">Jahnavi</div>
@@ -624,7 +641,7 @@
             </div>
 
             <!-- Drishti Testimonial Card -->
-            <div class="screenshot-card" data-lightbox-src="assets/testimonials/testimonial-drishti.jpeg" data-lightbox-caption="Drishti: 'Heyy you did an excellent reading of ours today! Pls let me know whenever you'll be having a stall again.'">
+            <div class="screenshot-card" data-category="campus" data-lightbox-src="assets/testimonials/testimonial-drishti.jpeg" data-lightbox-caption="Drishti: 'Heyy you did an excellent reading of ours today! Pls let me know whenever you'll be having a stall again.'">
               <img src="assets/testimonials/testimonial-drishti.jpeg" alt="Testimonial screenshot from Drishti" class="screenshot-img-thumb" loading="lazy">
               <div class="screenshot-card-overlay">
                 <div class="ss-client-name">Drishti</div>
@@ -633,7 +650,7 @@
             </div>
 
             <!-- Results & Membership Request Testimonial Card -->
-            <div class="screenshot-card" data-lightbox-src="assets/testimonials/testimonial-results.jpeg" data-lightbox-caption="Client Follow-up: 'Hy smayra, your last reading helped a lot and I saw real results after implementing the steps! Can we book another reading or do a membership plan?'">
+            <div class="screenshot-card" data-category="clarity campus" data-lightbox-src="assets/testimonials/testimonial-results.jpeg" data-lightbox-caption="Client Follow-up: 'Hy smayra, your last reading helped a lot and I saw real results after implementing the steps! Can we book another reading or do a membership plan?'">
               <img src="assets/testimonials/testimonial-results.jpeg" alt="Testimonial screenshot discussing real results" class="screenshot-img-thumb" loading="lazy">
               <div class="screenshot-card-overlay">
                 <div class="ss-client-name">Shazar / Campus Client</div>
@@ -642,7 +659,7 @@
             </div>
 
             <!-- Friends Booking Testimonial Card -->
-            <div class="screenshot-card" data-lightbox-src="assets/testimonials/testimonial-booking.jpeg" data-lightbox-caption="Client Booking: 'Ok I will make time, let's book it. And my friends also want to have a reading!'">
+            <div class="screenshot-card" data-category="campus" data-lightbox-src="assets/testimonials/testimonial-booking.jpeg" data-lightbox-caption="Client Booking: 'Ok I will make time, let's book it. And my friends also want to have a reading!'">
               <img src="assets/testimonials/testimonial-booking.jpeg" alt="Testimonial screenshot booking friend reading" class="screenshot-img-thumb" loading="lazy">
               <div class="screenshot-card-overlay">
                 <div class="ss-client-name">Arsh / University Friend</div>
@@ -651,12 +668,13 @@
             </div>
 
             <!-- Multi-Session Collage Card -->
-            <div class="screenshot-card" data-lightbox-src="assets/testimonials/testimonial-collage.jpeg" data-lightbox-caption="Collage of verified client feedback and appointment confirmations.">
+            <div class="screenshot-card" data-category="all campus clarity" data-lightbox-src="assets/testimonials/testimonial-collage.jpeg" data-lightbox-caption="Collage of verified client feedback and appointment confirmations.">
               <img src="assets/testimonials/testimonial-collage.jpeg" alt="Testimonial collage" class="screenshot-img-thumb" loading="lazy">
               <div class="screenshot-card-overlay">
                 <div class="ss-client-name">Verified Feedbacks</div>
                 <div class="ss-client-quote">Multiple messages reflecting guidance, trust, and repeat consultations.</div>
               </div>
+            </div>
             </div>
 
           </div>

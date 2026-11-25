@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDeckDrawFeature();
   initVideoPlayer();
   initLightbox();
+  initTestimonialFilters();
   initStoryAndDestinationModals();
   initCelestialAudio();
 });
@@ -384,6 +385,33 @@ function initLightbox() {
     if (e.key === 'Escape' && lightboxBackdrop.classList.contains('open')) {
       closeLightbox();
     }
+  });
+}
+
+/* ==========================================================================
+   6B. TESTIMONIAL CATEGORY FILTERS
+   ========================================================================== */
+function initTestimonialFilters() {
+  const tabBtns = document.querySelectorAll('.test-tab-btn');
+  const cards = document.querySelectorAll('.screenshot-card');
+
+  tabBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter') || 'all';
+
+      cards.forEach((card) => {
+        const category = card.getAttribute('data-category') || '';
+        if (filter === 'all' || category.includes(filter)) {
+          card.style.display = 'block';
+          card.style.animation = 'fadeIn 0.4s ease forwards';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
   });
 }
 
