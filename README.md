@@ -4,6 +4,10 @@
 
 An ethereal, editorial web experience designed for **Smayra** — student of the human psyche, explorer of symbolism, and independent tarot practitioner.
 
+🌐 **Live Website:** [https://reetadevisipaya-del.github.io/welcome-to-my-psyche/](https://reetadevisipaya-del.github.io/welcome-to-my-psyche/)  
+✉️ **Direct Orders & Consultations:** [samayraasipaya@gmail.com](mailto:samayraasipaya@gmail.com)  
+📸 **Instagram:** [@smayra.sipayaa](https://instagram.com/smayra.sipayaa)
+
 ---
 
 ## 🌟 Visual Identity & Opening Experience

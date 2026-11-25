@@ -503,7 +503,11 @@ const DESTINATIONS_DATA = {
         <p>We offer both online video sessions and in-person sanctuary readings (including exclusive campus sessions). Sessions include pre-cleansing with singing bowl, crystal focus, card spread exploration, and audio recording or detailed takeaway summary.</p>
       </div>
       <div class="modal-cta-box">
-        <a href="https://wa.me/?text=Hello%20Smayra,%20I%20would%20love%20to%20book%20a%20private%20tarot%20reading%20session%20with%20you." target="_blank" class="modal-action-link">Book Instantly via WhatsApp →</a>
+        <p>Direct Orders & Bookings:</p>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
+          <a href="mailto:samayraasipaya@gmail.com?subject=Order%20Private%20Tarot%20Reading%20with%20Smayra&body=Hello%20Smayra,%0A%0AI%20would%20like%20to%20order%20a%20private%20reading%20session.%0A%0AName:%20%0APreferred%20Date%20/%20Time:%20%0AQuestions:%20" class="modal-action-link">Order via Email (samayraasipaya@gmail.com) →</a>
+          <a href="https://wa.me/?text=Hello%20Smayra,%20I%20would%20love%20to%20book%20a%20private%20tarot%20reading%20session%20with%20you." target="_blank" class="modal-action-link" style="background: #25d366; color: #03070e;">WhatsApp →</a>
+        </div>
       </div>
     `
   },
