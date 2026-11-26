@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smayra Sipaya — Spiritual Curriculum Vitae | Tarot & Esoteric Studies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-gold: #cfa844;
+      --color-gold-light: #e8c766;
+      --color-gold-dark: #9e7d23;
+      --color-navy: #050b14;
+      --color-navy-dark: #03070e;
+      --color-slate: #2a3b58;
+      --color-paper: #ffffff;
+      --color-paper-alt: #f9f7f2;
+      --color-border: #e6dfcf;
+      --color-ink: #1a2233;
+      --color-ink-muted: #5a6882;
+      --font-serif: 'Cinzel', Georgia, serif;
+      --font-editorial: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #0b1528;
+      background-image: radial-gradient(circle at 50% 10%, rgba(207, 168, 68, 0.08) 0%, transparent 60%);
+      font-family: var(--font-sans);
+      color: var(--color-ink);
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+
+    /* Action Bar (Screen Only) */
+    .screen-actions-bar {
+      max-width: 850px;
+      margin: 0 auto 1.5rem auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(13, 26, 51, 0.85);
+      border: 1px solid rgba(207, 168, 68, 0.35);
+      padding: 0.85rem 1.5rem;
+      border-radius: 9999px;
+      backdrop-filter: blur(10px);
+      color: #ffffff;
+    }
+
+    .screen-actions-bar a,
+    .screen-actions-bar button {
+      font-family: var(--font-serif);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0.55rem 1.25rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #e8c766 0%, #cfa844 100%);
+      color: #050b14;
+      border: 1px solid #cfa844;
+    }
+
+    .btn-gold:hover {
+      background: #ffffff;
+      box-shadow: 0 0 15px rgba(207, 168, 68, 0.6);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(207, 168, 68, 0.4);
+      color: var(--color-gold-light);
+    }
+
+    .btn-outline:hover {
+      background: rgba(207, 168, 68, 0.2);
+      color: #ffffff;
+    }
+
+    /* CV Document Container */
+    .cv-document {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--color-paper);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(207, 168, 68, 0.15);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .cv-page {
+      padding: 3rem 3.25rem;
+      position: relative;
+      background: var(--color-paper);
+      min-height: 1100px;
+    }
+
+    .cv-page-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, #cfa844 50%, transparent 100%);
+      margin: 0;
+    }
+
+    /* Header */
+    .cv-header {
+      text-align: center;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+      position: relative;
+    }
+
+    .cv-glyph {
+      font-size: 1.25rem;
+      color: var(--color-gold);
+      letter-spacing: 0.4em;
+      margin-bottom: 0.35rem;
+    }
+
+    .cv-name {
+      font-family: var(--font-serif);
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--color-navy);
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+
+    .cv-title {
+      font-family: var(--font-editorial);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--color-gold-dark);
+      font-style: italic;
+      margin-bottom: 0.35rem;
+    }
+
+    .cv-tagline {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--color-ink-muted);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .cv-contacts-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background: var(--color-paper-alt);
+      border: 1px solid var(--color-border);
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      color: var(--color-ink);
+    }
+
+    .cv-contacts-bar a {
+      color: var(--color-navy);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .cv-contacts-bar a:hover {
+      color: var(--color-gold-dark);
+      text-decoration: underline;
+    }
+
+    /* Section Headings */
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 1.6rem 0 0.75rem 0;
+      padding-bottom: 0.35rem;
+      border-bottom: 1.5px solid var(--color-gold);
+    }
+
+    .section-title .title-glyph {
+      color: var(--color-gold);
+      font-size: 0.85rem;
+    }
+
+    /* Narrative Paragraphs */
+    .cv-narrative {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: #2c384e;
+      margin-bottom: 0.75rem;
+      text-align: justify;
+    }
+
+    /* Bullet List */
+    .cv-bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      margin-bottom: 1rem;
+    }
+
+    .cv-bullet-list li {
+      position: relative;
+      padding-left: 1.25rem;
+      font-size: 0.86rem;
+      line-height: 1.5;
+      color: #334155;
+    }
+
+    .cv-bullet-list li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 0.65rem;
+      color: var(--color-gold);
+    }
+
+    .cv-bullet-list strong {
+      color: var(--color-navy);
+      font-weight: 600;
+    }
+
+    /* Role Entry */
+    .job-entry {
+      margin-bottom: 1rem;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.25rem;
+    }
+
+    .job-title {
+      font-family: var(--font-editorial);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-navy);
+    }
+
+    .job-meta {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      color: var(--color-gold-dark);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .job-org {
+      font-size: 0.82rem;
+      font-style: italic;
+      color: var(--color-ink-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    /* 2-Column Grid for Competencies */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .skills-col {
+      background: var(--color-paper-alt);
+      border: 1px solid var(--color-border);
+      padding: 1rem 1.15rem;
+      border-radius: 6px;
+    }
+
+    .skills-col-title {
+      font-family: var(--font-serif);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-gold-dark);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    /* Personal Creed Callout */
+    .creed-box {
+      background: linear-gradient(145deg, #fdfbf7 0%, #f4efe4 100%);
+      border: 1px solid #d4c5a3;
+      border-left: 3px solid var(--color-gold);
+      padding: 1rem 1.25rem;
+      border-radius: 4px;
+      margin: 1.25rem 0 0.5rem 0;
+      text-align: center;
+    }
+
+    .creed-text {
+      font-family: var(--font-editorial);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--color-navy);
+      line-height: 1.5;
+      margin-bottom: 0.35rem;
+    }
+
+    .creed-author {
+      font-family: var(--font-serif);
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      color: var(--color-gold-dark);
+      font-weight: 700;
+    }
+
+    /* Page Footer */
+    .cv-page-footer {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid var(--color-border);
+      padding-top: 0.75rem;
+      margin-top: 1.5rem;
+      font-size: 0.72rem;
+      color: var(--color-ink-muted);
+    }
+
+    /* Print Formatting (Clean 2-Page Cut) */
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+      .screen-actions-bar {
+        display: none !important;
+      }
+      .cv-document {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: 100%;
+      }
+      .cv-page {
+        padding: 2.25rem 2.75rem;
+        min-height: auto;
+        page-break-after: always;
+      }
+      .cv-page:last-child {
+        page-break-after: avoid;
+      }
+      .cv-page-divider {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Bar for Quick Download/Print -->
+  <div class="screen-actions-bar">
+    <div>
+      <span style="font-family: var(--font-serif); font-size: 0.85rem; letter-spacing: 0.1em; color: var(--color-gold-light);">✦ SMAYRA SIPAYA</span>
+      <span style="font-size: 0.78rem; color: #a4b5d0; margin-left: 0.5rem;">Spiritual Curriculum Vitae</span>
+    </div>
+    <div style="display: flex; gap: 0.75rem;">
+      <a href="Smayra_Sipaya_Spiritual_CV.docx" download class="btn-gold">
+        <span>📥 Download Word (.docx)</span>
+      </a>
+      <button onclick="window.print()" class="btn-outline">
+        <span>🖨️ Print / Save PDF</span>
+      </button>
+    </div>
+  </div>
+
+  <main class="cv-document">
+    
+    <!-- ====================================================================
+         PAGE ONE
+         ==================================================================== -->
+    <section class="cv-page">
+      
+      <!-- Header -->
+      <header class="cv-header">
+        <div class="cv-glyph">☉ · ☽ · ☿ · ♀ · ♂ · ♃ · ♄</div>
+        <h1 class="cv-name">Smayra Sipaya</h1>
+        <p class="cv-title">Independent Tarot Practitioner · Writer & Esoteric Researcher</p>
+        <p class="cv-tagline">Tarot · Analytical Psychology · Symbolism · Reflective Inquiry</p>
+        
+        <div class="cv-contacts-bar">
+          <span>🌐 <a href="https://smayradivinepsyche.vercel.app/" target="_blank">smayradivinepsyche.vercel.app</a></span>
+          <span>📍 Chandigarh, India</span>
+          <span>✉️ <a href="mailto:samayraasipaya@gmail.com">samayraasipaya@gmail.com</a></span>
+          <span>📸 <a href="https://instagram.com/smayra.sipayaa" target="_blank">@smayra.sipayaa</a></span>
+        </div>
+      </header>
+
+      <!-- 1. Profile & Philosophy -->
+      <h2 class="section-title">
+        <span class="title-glyph">✦</span> Profile & Reading Philosophy
+      </h2>
+      <p class="cv-narrative">
+        My relationship with tarot began with a fascination for the stories, visual motifs, and living archetypes held within its imagery. What began as a personal exploration of the cards has matured into a disciplined, ongoing inquiry into how symbolism, psychology, and intuition intersect to illuminate the human condition.
+      </p>
+      <p class="cv-narrative">
+        I deliberately approach tarot as more than a predictive or fortune-telling device. To me, it is an intricate symbolic language—a mirror of emotional architectures, behavioral patterns, and unconscious narratives that helps individuals examine their circumstances with clarity and agency. My practice bridges traditional Rider–Waite-Smith iconography with Carl Jung's analytical psychology (the shadow, the anima/animus, individuation) and Hermetic philosophy. Through private consultations, campus readings, and independent writing, my intention is to provide grounded, intellectually honest, and compassionate guidance in a confidential, non-judgmental space.
+      </p>
+
+      <!-- 2. Areas of Inquiry -->
+      <h2 class="section-title">
+        <span class="title-glyph">✦</span> Areas of Inquiry & Specialisation
+      </h2>
+      <ul class="cv-bullet-list">
+        <li>
+          <strong>Tarot Studies & Spread Dynamics:</strong> Deep study of the Rider–Waite tradition, the symbolic architecture of the Major and Minor Arcana, multi-card contextual relationships, and specialized spread geometry (e.g., Celtic Cross, temporal mirrors, custom archetypal blueprints).
+        </li>
+        <li>
+          <strong>Analytical & Archetypal Psychology:</strong> Practical application of Jungian theory—exploring archetypes, shadow integration, the collective unconscious, active imagination, and personal individuation through card symbolism.
+        </li>
+        <li>
+          <strong>Esoteric & Hermetic Philosophy:</strong> Independent research into Hermetic principles (correspondence, polarity, rhythm), elemental associations (Fire, Water, Air, Earth), sacred geometry, and esoteric correspondences.
+        </li>
+        <li>
+          <strong>Intuitive & Symbolic Synthesis:</strong> Harmonizing classical iconography with non-linear intuitive perception, contextual nuances, and real-time client dialogue rather than reciting rigid, textbook definitions.
+        </li>
+        <li>
+          <strong>Reflective & Contemplative Practices:</strong> Employing tarot as an introspective medium for self-exploration, reflective journaling, recognizing unconscious habits, and navigating complex life transitions.
+        </li>
+      </ul>
+
+      <!-- 3. Professional Experience (Part 1) -->
+      <h2 class="section-title">
+        <span class="title-glyph">✦</span> Practical Experience
+      </h2>
+
+      <div class="job-entry">
+        <div class="job-header">
+          <span class="job-title">Independent Tarot Practitioner</span>
+          <span class="job-meta">2023 – PRESENT</span>
+        </div>
+        <div class="job-org">Private Practice · Chandigarh, India & Global Consultations</div>
+        <ul class="cv-bullet-list">
+          <li>
+            <strong>Client-Centered Consultations:</strong> Conduct thorough 1-on-1 private tarot consultations (in-person and digital video/audio sessions), tailoring every reading to the client’s unique psychological circumstances and specific inquiries.
+          </li>
+          <li>
+            <strong>Symbolic Synthesis:</strong> Examine card combinations, elemental balances, and recurring motifs to provide actionable, grounded insights on relationships, career crossroads, self-discovery, and emotional patterns.
+          </li>
+          <li>
+            <strong>Ethical Standards:</strong> Maintain rigorous confidentiality, emotional empathy, and clear boundaries, emphasizing client autonomy and personal agency rather than fatalistic prediction.
+          </li>
+        </ul>
+      </div>
+
+      <div class="job-entry" style="margin-bottom: 0;">
+        <div class="job-header">
+          <span class="job-title">Founder & Creative Director</span>
+          <span class="job-meta">2024 – PRESENT</span>
+        </div>
+        <div class="job-org">My Psyche — Independent Spiritual Platform · <a href="https://smayradivinepsyche.vercel.app/" target="_blank" style="color: var(--color-gold-dark);">smayradivinepsyche.vercel.app</a></div>
+        <ul class="cv-bullet-list">
+          <li>
+            <strong>Platform Architecture:</strong> Conceptualized, curated, and launched "My Psyche", establishing an editorial, celestial platform dedicated to tarot, astrology, and analytical psychology.
+          </li>
+          <li>
+            <strong>Curated Service Catalog:</strong> Authored a structured 32-reading catalog spanning Love & Relationships, Career & Purpose, Personal Growth, and Esoteric Studies with integrated direct consultation workflows.
+          </li>
+        </ul>
+      </div>
+
+      <footer class="cv-page-footer">
+        <span>Smayra Sipaya · Spiritual Curriculum Vitae</span>
+        <span>smayradivinepsyche.vercel.app · Page 1 of 2</span>
+      </footer>
+
+    </section>
+
+    <hr class="cv-page-divider">
+
+    <!-- ====================================================================
+         PAGE TWO
+         ==================================================================== -->
+    <section class="cv-page">
+      
+      <!-- Public Engagement / Live Campus Readings -->
+      <h2 class="section-title" style="margin-top: 0;">
+        <span class="title-glyph">✦</span> Public Engagement & Live Readings
+      </h2>
+
+      <div class="job-entry">
+        <div class="job-header">
+          <span class="job-title">Tarot Reader & Experiential Facilitator</span>
+          <span class="job-meta">2024</span>
+        </div>
+        <div class="job-org">University Campus Reading Stalls · Chandigarh University</div>
+        <ul class="cv-bullet-list">
+          <li>
+            <strong>On-the-Spot In-Person Consultations:</strong> Organized, designed, and operated high-traffic live reading stalls ("The Unconscious Blueprint"), providing on-site tarot sessions for students, educators, and campus visitors.
+          </li>
+          <li>
+            <strong>Public Communication & Accessibility:</strong> Successfully demystified esoteric concepts for diverse audiences, translating abstract archetypal imagery into relatable, grounded discussions on academic stress, purpose, and relationships.
+          </li>
+          <li>
+            <strong>Practical Resonance & Commercial Success:</strong> Demonstrated high client rapport and community trust, conducting over dozens of individual readings and generating approximately ₹6,000 in revenue across two intensive days.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Writing & Publications -->
+      <h2 class="section-title">
+        <span class="title-glyph">✦</span> Writing & Independent Projects
+      </h2>
+
+      <div class="job-entry">
+        <div class="job-header">
+          <span class="job-title">ARCANA — Read the Cards. Understand the Story.</span>
+          <span class="job-meta">AUTHOR · IN PROGRESS</span>
+        </div>
+        <div class="job-org">Independent Tarot Monograph & Interpretive Guide</div>
+        <p class="cv-narrative">
+          A comprehensive analytical guide examining the 78 cards of the tarot deck through narrative structure, psychological depth, and visual symbolism. The manuscript argues that tarot mastery requires grasping the overarching thematic dialogue between cards rather than memorizing disjointed keyword lists. Written to provide practitioners and seekers with an accessible yet intellectually rigorous framework for card interpretation.
+        </p>
+      </div>
+
+      <!-- Academic Foundation -->
+      <h2 class="section-title">
+        <span class="title-glyph">✦</span> Academic Foundation
+      </h2>
+
+      <div class="job-entry">
+        <div class="job-header">
+          <span class="job-title">Bachelor of Arts (Honours) in Psychology</span>
+          <span class="job-meta">EXPECTED GRADUATION: 2027</span>
+        </div>
+        <div class="job-org">Chandigarh University · Punjab, India</div>
+        <ul class="cv-bullet-list">
+          <li>
+            <strong>Academic Rigor:</strong> Undergraduate study focused on cognitive processes, personality theory, developmental psychology, perception, and human behavioral dynamics.
+          </li>
+          <li>
+            <strong>Theoretical Intersections:</strong> Exploring how psychological constructs enrich symbolic analysis while upholding a firm ethical demarcation: tarot is practiced as a reflective and philosophical tool for self-inquiry, distinctly separate from clinical diagnosis or psychotherapy.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Practitioner Competencies (2-column layout) -->
+      <h2 class="section-title">
+        <span class="title-glyph">✦</span> Practitioner Competencies
+      </h2>
+      <div class="skills-grid">
+        <div class="skills-col">
+          <div class="skills-col-title">Symbolic & Intuitive Craft</div>
+          <ul class="cv-bullet-list" style="margin-bottom: 0;">
+            <li>Rider–Waite-Smith iconography & card combinations</li>
+            <li>Custom geometric spread architecture</li>
+            <li>Jungian archetypal framework & shadow inquiry</li>
+            <li>Elemental alchemy & numerological correspondence</li>
+          </ul>
+        </div>
+        <div class="skills-col">
+          <div class="skills-col-title">Facilitation & Professionalism</div>
+          <ul class="cv-bullet-list" style="margin-bottom: 0;">
+            <li>1-on-1 empathetic holding space & active listening</li>
+            <li>Public event stalls & live campus engagements</li>
+            <li>Esoteric research, essay writing & publishing</li>
+            <li>Digital platform design & ethical client consultation</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Areas of Collaboration -->
+      <h2 class="section-title">
+        <span class="title-glyph">✦</span> Areas for Professional Collaboration
+      </h2>
+      <p class="cv-narrative" style="margin-bottom: 0.5rem; font-style: italic;">
+        Actively seeking meaningful connections with spiritual organisations, wellness spaces, retreat founders, and publishers:
+      </p>
+      <ul class="cv-bullet-list">
+        <li><strong>Spiritual Retreats & Gatherings:</strong> Resident tarot practitioner, reflective contemplation circles, sacred table readings.</li>
+        <li><strong>Educational Workshops:</strong> Masterclasses on "Tarot as a Symbolic Language" and "Jungian Archetypes in the Cards."</li>
+        <li><strong>Cultural Events & Pop-Ups:</strong> Curated live reading lounges, altar art installations, festival experiential tables.</li>
+        <li><strong>Creative & Editorial Media:</strong> Guest writing, podcast dialogues, and publication contributions on modern esotericism.</li>
+      </ul>
+
+      <!-- Personal Creed Callout Box -->
+      <div class="creed-box">
+        <p class="creed-text">
+          “The most compelling part of tarot is the conversation it initiates. A card carries centuries of collective symbolism, yet its meaning comes alive only in direct relationship to the person who sits across from it.”
+        </p>
+        <p class="creed-author">— SMAYRA SIPAYA · smayradivinepsyche.vercel.app</p>
+      </div>
+
+      <footer class="cv-page-footer">
+        <span>Smayra Sipaya · Spiritual Curriculum Vitae</span>
+        <span>smayradivinepsyche.vercel.app · Page 2 of 2</span>
+      </footer>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
