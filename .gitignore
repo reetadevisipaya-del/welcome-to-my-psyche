@@ -9,3 +9,10 @@ $RECYCLE.BIN/
 *.log
 npm-debug.log*
 .system_generated/
+
+# Raw media drops in root (canonical files are placed in /assets/)
+/testimonial1vedio.mp4
+/testimonial*.jpeg
+/work*.jpeg
+/work *.jpeg
+

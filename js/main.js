@@ -1,6 +1,6 @@
 /**
  * MY PSYCHE — SMAYRA | CINEMATIC CELESTIAL EXPERIENCE
- * Orchestration Engine: Particles, Parallax, Deck Draw, Audio, Lightbox & Modals
+ * Orchestration Engine: Particles, Parallax, Deck Draw, Audio, Lightbox & Cart Booking System
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,12 +11,286 @@ document.addEventListener('DOMContentLoaded', () => {
   initVideoPlayer();
   initLightbox();
   initTestimonialFilters();
-  initStoryAndDestinationModals();
+  initReadingsCatalog();
+  initCartSystem();
   initCelestialAudio();
 });
 
 /* ==========================================================================
-   1. CANVAS CELESTIAL STARDUST & TWINKLING ENGINE
+   1. CENTRAL CONFIGURATION: 32 TAROT READINGS
+   ========================================================================== */
+const READINGS_DATA = [
+  // LOVE & RELATIONSHIPS
+  {
+    id: 'love-reading',
+    category: 'love',
+    categoryName: 'Love & Relationships',
+    name: 'Love Reading',
+    price: 799,
+    description: 'Explores current romantic energies, mutual emotional alignment, and emerging opportunities in your love life.'
+  },
+  {
+    id: 'specific-person',
+    category: 'love',
+    categoryName: 'Love & Relationships',
+    name: 'Specific Person Reading',
+    price: 799,
+    description: 'Deep dive into a specific individual\'s subconscious intentions, feelings toward you, and potential connection.'
+  },
+  {
+    id: 'thoughts-feelings',
+    category: 'love',
+    categoryName: 'Love & Relationships',
+    name: 'Thoughts & Feelings Reading',
+    price: 699,
+    description: 'Reveals what someone is consciously thinking versus what they are genuinely feeling beneath their exterior.'
+  },
+  {
+    id: 'relationship-compatibility',
+    category: 'love',
+    categoryName: 'Love & Relationships',
+    name: 'Relationship Compatibility',
+    price: 999,
+    description: 'Evaluates emotional, psychological, and spiritual compatibility to navigate strengths and friction points.'
+  },
+  {
+    id: 'reconciliation-reading',
+    category: 'love',
+    categoryName: 'Love & Relationships',
+    name: 'Reconciliation Reading',
+    price: 899,
+    description: 'Examines unresolved history, closure needs, and whether romantic reconnection is energetically favorable.'
+  },
+  {
+    id: 'marriage-commitment',
+    category: 'love',
+    categoryName: 'Love & Relationships',
+    name: 'Marriage & Commitment Reading',
+    price: 999,
+    description: 'Explores readiness for long-term commitment, mutual expectations, and future marital milestones.'
+  },
+  {
+    id: 'relationship-dynamics',
+    category: 'love',
+    categoryName: 'Love & Relationships',
+    name: 'Relationship Dynamics',
+    price: 899,
+    description: 'Uncovers recurring interpersonal cycles, communication gaps, and subconscious scripts shaping your bond.'
+  },
+  {
+    id: 'past-relationship-closure',
+    category: 'love',
+    categoryName: 'Love & Relationships',
+    name: 'Past Relationship & Closure',
+    price: 799,
+    description: 'Helps untangle lingering energetic ties, heal heartbreak, and achieve genuine emotional closure.'
+  },
+
+  // CAREER & FINANCE
+  {
+    id: 'career-reading',
+    category: 'career',
+    categoryName: 'Career & Finance',
+    name: 'Career Reading',
+    price: 799,
+    description: 'Comprehensive assessment of current workplace atmosphere, vocational challenges, and growth trajectory.'
+  },
+  {
+    id: 'career-opportunities',
+    category: 'career',
+    categoryName: 'Career & Finance',
+    name: 'Career Opportunities',
+    price: 799,
+    description: 'Identifies incoming job offers, interview prospects, and strategic windows for professional advancement.'
+  },
+  {
+    id: 'financial-reading',
+    category: 'career',
+    categoryName: 'Career & Finance',
+    name: 'Financial Reading',
+    price: 899,
+    description: 'Analyzes financial habits, subconscious abundance blocks, and upcoming material resource shifts.'
+  },
+  {
+    id: 'business-entrepreneurship',
+    category: 'career',
+    categoryName: 'Career & Finance',
+    name: 'Business & Entrepreneurship',
+    price: 999,
+    description: 'Strategic divination for founders and creators: business feasibility, risk factors, and expansion timing.'
+  },
+  {
+    id: 'education-academic-guidance',
+    category: 'career',
+    categoryName: 'Career & Finance',
+    name: 'Education & Academic Guidance',
+    price: 699,
+    description: 'Clarity on degree choices, academic hurdles, exam focus, and university decision pathways.'
+  },
+  {
+    id: 'career-direction-life-purpose',
+    category: 'career',
+    categoryName: 'Career & Finance',
+    name: 'Career Direction & Life Purpose',
+    price: 999,
+    description: 'Aligns your everyday professional talents with your authentic soul vocation and deeper personal calling.'
+  },
+
+  // PERSONAL GROWTH & SELF-DISCOVERY
+  {
+    id: 'shadow-work-reading',
+    category: 'growth',
+    categoryName: 'Personal Growth & Self-Discovery',
+    name: 'Shadow Work Reading',
+    price: 1299,
+    description: 'Brings suppressed emotions, unacknowledged triggers, and subconscious gold to conscious awareness.'
+  },
+  {
+    id: 'inner-child-reading',
+    category: 'growth',
+    categoryName: 'Personal Growth & Self-Discovery',
+    name: 'Inner Child Reading',
+    price: 1199,
+    description: 'Reconnects with developmental childhood wounds, restoring creative play, emotional safety, and trust.'
+  },
+  {
+    id: 'self-discovery-reading',
+    category: 'growth',
+    categoryName: 'Personal Growth & Self-Discovery',
+    name: 'Self-Discovery Reading',
+    price: 999,
+    description: 'A deep psychological mirror illuminating your core personality archetypes, strengths, and hidden blind spots.'
+  },
+  {
+    id: 'emotional-patterns-reading',
+    category: 'growth',
+    categoryName: 'Personal Growth & Self-Discovery',
+    name: 'Emotional Patterns Reading',
+    price: 999,
+    description: 'Identifies repetitive anxiety, overthinking, or defense mechanisms and provides constructive shifts.'
+  },
+  {
+    id: 'personal-transformation',
+    category: 'growth',
+    categoryName: 'Personal Growth & Self-Discovery',
+    name: 'Personal Transformation Reading',
+    price: 1299,
+    description: 'Navigates profound identity metamorphosis, shedding outgrown skins during pivotal life rebirths.'
+  },
+  {
+    id: 'unconscious-patterns-archetypes',
+    category: 'growth',
+    categoryName: 'Personal Growth & Self-Discovery',
+    name: 'Unconscious Patterns & Archetypes',
+    price: 1299,
+    description: 'Jungian archetypal diagnosis of the subconscious scripts, complexes, and mythic forces active in your life.'
+  },
+
+  // SPIRITUALITY
+  {
+    id: 'spiritual-growth',
+    category: 'spirituality',
+    categoryName: 'Spirituality',
+    name: 'Spiritual Growth Reading',
+    price: 999,
+    description: 'Examines your spiritual evolution, karmic homework, and the intuitive faculties opening up in this chapter.'
+  },
+  {
+    id: 'spiritual-journey',
+    category: 'spirituality',
+    categoryName: 'Spirituality',
+    name: 'Spiritual Journey Reading',
+    price: 999,
+    description: 'Maps the spiritual landscape you are navigating and highlights guideposts from your higher intuition.'
+  },
+  {
+    id: 'intuitive-guidance',
+    category: 'spirituality',
+    categoryName: 'Spirituality',
+    name: 'Intuitive Guidance',
+    price: 799,
+    description: 'Grounding, heartfelt clarity when you feel spiritually disoriented or disconnected from your inner compass.'
+  },
+  {
+    id: 'spiritual-transformation',
+    category: 'spirituality',
+    categoryName: 'Spirituality',
+    name: 'Spiritual Transformation',
+    price: 1299,
+    description: 'Comprehensive navigation through intense spiritual awakenings, dark nights of the soul, and transcendent expansion.'
+  },
+
+  // GENERAL READINGS
+  {
+    id: 'one-question-clarity',
+    category: 'general',
+    categoryName: 'General Readings',
+    name: 'One Question / Quick Clarity',
+    price: 399,
+    description: 'Laser-focused, direct tarot inquiry answering one pressing situation, decision, or immediate question.'
+  },
+  {
+    id: 'general-tarot-reading',
+    category: 'general',
+    categoryName: 'General Readings',
+    name: 'General Tarot Reading',
+    price: 899,
+    description: 'Broad overview surveying all life spheres: romance, professional direction, emotional state, and spiritual climate.'
+  },
+  {
+    id: 'past-present-future',
+    category: 'general',
+    categoryName: 'General Readings',
+    name: 'Past, Present & Future',
+    price: 799,
+    description: 'The foundational 3-card temporal spread exploring root causes, current dynamics, and emerging outcomes.'
+  },
+  {
+    id: 'celtic-cross-reading',
+    category: 'general',
+    categoryName: 'General Readings',
+    name: 'Celtic Cross Reading',
+    price: 1499,
+    description: 'The classic 10-card multidimensional diagnostic unravelling situation, challenges, subconscious roots, advice, and final culmination.'
+  },
+  {
+    id: 'decision-making-reading',
+    category: 'general',
+    categoryName: 'General Readings',
+    name: 'Decision-Making Reading',
+    price: 799,
+    description: 'Compares two or more potential paths side-by-side, analyzing likely energetic outcomes and trade-offs.'
+  },
+  {
+    id: 'monthly-forecast',
+    category: 'general',
+    categoryName: 'General Readings',
+    name: 'Monthly Forecast',
+    price: 1299,
+    description: 'A 30-day forecast breaking down the 4 weeks ahead, highlighting opportune days, cautions, and central archetypes.'
+  },
+  {
+    id: 'annual-reading-12-months',
+    category: 'general',
+    categoryName: 'General Readings',
+    name: 'Annual Reading (12 Months)',
+    price: 2499,
+    description: 'A master 12-card solar zodiac roadmap mapping the key theme, challenge, and opportunity for every month of your upcoming year.'
+  },
+  {
+    id: 'deep-personalised-reading',
+    category: 'general',
+    categoryName: 'General Readings',
+    name: 'Deep Personalised Reading',
+    price: 1799,
+    description: 'A custom, multi-deck holistic session tailored exclusively to your complex personal circumstances and inquiries.'
+  }
+];
+
+const BUSINESS_EMAIL = 'samayraasipaya@gmail.com';
+
+/* ==========================================================================
+   2. CANVAS CELESTIAL STARDUST & TWINKLING ENGINE
    ========================================================================== */
 function initStarfieldCanvas() {
   const canvas = document.getElementById('celestial-canvas');
@@ -32,8 +306,6 @@ function initStarfieldCanvas() {
   });
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // Stardust & Star particle definitions
   const particleCount = window.innerWidth < 768 ? 45 : 90;
   const particles = [];
 
@@ -96,7 +368,7 @@ function initStarfieldCanvas() {
 }
 
 /* ==========================================================================
-   2. PARALLAX & AMBIENT DEPTH CONTROLLER
+   3. PARALLAX & AMBIENT DEPTH CONTROLLER
    ========================================================================== */
 function initParallaxEffects() {
   const portalWrap = document.querySelector('.portal-visual-wrap');
@@ -129,7 +401,7 @@ function initParallaxEffects() {
 }
 
 /* ==========================================================================
-   3. NAVIGATION, ENTRANCE CUES & SCROLL LOGIC
+   4. NAVIGATION & SMOOTH SCROLLING
    ========================================================================== */
 function initScrollAndNavigation() {
   const navbar = document.querySelector('.celestial-navbar');
@@ -140,7 +412,6 @@ function initScrollAndNavigation() {
   const scrollCue = document.querySelector('.scroll-entrance-cue');
   const backToTopBtn = document.querySelector('.back-to-top-btn');
 
-  // Sticky Navbar state
   window.addEventListener('scroll', () => {
     if (window.scrollY > 80) {
       navbar.classList.add('scrolled');
@@ -149,7 +420,6 @@ function initScrollAndNavigation() {
     }
   });
 
-  // Mobile Menu Toggle
   if (mobileToggle && navMenu) {
     mobileToggle.addEventListener('click', () => {
       navMenu.classList.toggle('open');
@@ -164,34 +434,27 @@ function initScrollAndNavigation() {
     });
   }
 
-  // Smooth scroll transitions
   if (enterBtn) {
     enterBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      const target = document.getElementById('meet-practitioner');
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
+      const target = document.getElementById('about-me');
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
   }
 
   if (scrollCue) {
     scrollCue.addEventListener('click', (e) => {
       e.preventDefault();
-      const target = document.getElementById('meet-practitioner');
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
+      const target = document.getElementById('about-me');
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
   }
 
   if (skipIntroBtn) {
     skipIntroBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      const target = document.getElementById('enter-my-world');
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
+      const target = document.getElementById('choose-reading');
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
   }
 
@@ -204,7 +467,7 @@ function initScrollAndNavigation() {
 }
 
 /* ==========================================================================
-   4. INTERACTIVE CARD DRAW: "DRAW YOUR CELESTIAL ARCHETYPE"
+   5. INTERACTIVE CARD DRAW: "SHUFFLE A CARD"
    ========================================================================== */
 const ARCHETYPES = [
   {
@@ -287,10 +550,8 @@ function initDeckDrawFeature() {
   let isFlipped = false;
 
   function performDraw() {
-    // Pick random archetype
     const randomCard = ARCHETYPES[Math.floor(Math.random() * ARCHETYPES.length)];
 
-    // If currently flipped, flip back first
     if (isFlipped) {
       cardInner.classList.remove('flipped');
       isFlipped = false;
@@ -320,30 +581,23 @@ function initDeckDrawFeature() {
     }
   }
 
-  if (drawBtn) {
-    drawBtn.addEventListener('click', performDraw);
-  }
-
-  if (flipper) {
-    flipper.addEventListener('click', performDraw);
-  }
+  if (drawBtn) drawBtn.addEventListener('click', performDraw);
+  if (flipper) flipper.addEventListener('click', performDraw);
 }
 
 /* ==========================================================================
-   5. VIDEO TESTIMONIAL PLAYER CONTROLLER
+   6. VIDEO TESTIMONIAL PLAYER WITH AUDIO
    ========================================================================== */
 function initVideoPlayer() {
   const video = document.querySelector('.video-player-wrap video');
   if (!video) return;
-
-  // Let video be controlled via standard HTML5 controls
-  video.addEventListener('play', () => {
-    // Optionally dim background or pause background audio
-  });
+  // Ensure audio is enabled and controls are active
+  video.volume = 1.0;
+  video.muted = false;
 }
 
 /* ==========================================================================
-   6. IMAGE LIGHTBOX (FOR TESTIMONIALS & ALTAR PHOTOGRAPHY)
+   7. LIGHTBOX FOR TESTIMONIALS & PICTURES AT WORK
    ========================================================================== */
 function initLightbox() {
   const lightboxBackdrop = document.getElementById('lightbox-modal');
@@ -353,23 +607,27 @@ function initLightbox() {
 
   if (!lightboxBackdrop || !lightboxImg) return;
 
-  // Listen on all clickable screenshot cards and altar cards
-  const clickableItems = document.querySelectorAll('[data-lightbox-src]');
+  function bindLightboxTriggers() {
+    const clickableItems = document.querySelectorAll('[data-lightbox-src]');
+    clickableItems.forEach((item) => {
+      item.onclick = () => {
+        const src = item.getAttribute('data-lightbox-src');
+        const caption = item.getAttribute('data-lightbox-caption') || '';
 
-  clickableItems.forEach((item) => {
-    item.addEventListener('click', () => {
-      const src = item.getAttribute('data-lightbox-src');
-      const caption = item.getAttribute('data-lightbox-caption') || '';
-
-      lightboxImg.src = src;
-      if (lightboxCaption) lightboxCaption.textContent = caption;
-      lightboxBackdrop.classList.add('open');
-      document.body.style.overflow = 'hidden';
+        lightboxImg.src = src;
+        if (lightboxCaption) lightboxCaption.textContent = caption;
+        lightboxBackdrop.classList.add('open');
+        lightboxBackdrop.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      };
     });
-  });
+  }
+
+  bindLightboxTriggers();
 
   function closeLightbox() {
     lightboxBackdrop.classList.remove('open');
+    lightboxBackdrop.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
     setTimeout(() => {
       lightboxImg.src = '';
@@ -389,7 +647,7 @@ function initLightbox() {
 }
 
 /* ==========================================================================
-   6B. TESTIMONIAL CATEGORY FILTERS
+   8. TESTIMONIAL CATEGORY FILTERS
    ========================================================================== */
 function initTestimonialFilters() {
   const tabBtns = document.querySelectorAll('.test-tab-btn');
@@ -416,210 +674,327 @@ function initTestimonialFilters() {
 }
 
 /* ==========================================================================
-   7. STORY MODAL & DESTINATION DEEP-DIVES
+   9. CATALOG & READING SERVICE CARDS (32 READINGS)
    ========================================================================== */
-const DESTINATIONS_DATA = {
-  library: {
-    title: 'The Tarot Library',
-    subtitle: '78 Archetypes of the Human Experience',
-    content: `
-      <p class="modal-lead">The Tarot is not an oracle of fatalistic prediction; it is an illustrated encyclopedia of the subconscious mind.</p>
-      <div class="modal-section-block">
-        <h4 class="modal-block-heading">The Major Arcana (The Fool's Journey)</h4>
-        <p>From Card 0 (The Fool) stepping off the precipice of pure potential to Card XXI (The World) achieving psychological individuation, the 22 Major Arcana cards map the universal stages of human psychological evolution.</p>
-      </div>
-      <div class="modal-section-block">
-        <h4 class="modal-block-heading">The Four Minor Arcana Elemental Realms</h4>
-        <ul>
-          <li><strong>Wands (Fire):</strong> Passion, creative impulse, willpower, vital libido.</li>
-          <li><strong>Cups (Water):</strong> Emotional landscapes, dreams, unconscious feelings, relational intimacy.</li>
-          <li><strong>Swords (Air):</strong> Intellect, belief systems, mental conflict, communicative clarity.</li>
-          <li><strong>Pentacles (Earth):</strong> Material reality, somatic body, financial grounding, tangible mastery.</li>
-        </ul>
-      </div>
-      <div class="modal-cta-box">
-        <p>Curious about exploring your personal card archetype?</p>
-        <a href="#booking-sanctum" class="modal-action-link" onclick="closeAllModals()">Book an In-Depth Archetypal Reading →</a>
-      </div>
-    `
-  },
-  astrology: {
-    title: 'Astrology and Celestial Studies',
-    subtitle: 'The Cosmic Architecture of the Psyche',
-    content: `
-      <p class="modal-lead">Astrology reveals the celestial coordinates under which your conscious perspective was encoded.</p>
-      <div class="modal-section-block">
-        <h4 class="modal-block-heading">The Cosmic Triad</h4>
-        <p><strong>The Sun:</strong> Your core conscious essence, vitality, and heroic journey of individuation.<br>
-        <strong>The Moon:</strong> Your nocturnal emotional landscape, reactive patterns, and childhood instinct.<br>
-        <strong>The Rising (Ascendant):</strong> The lens through which you meet the world and your external persona.</p>
-      </div>
-      <div class="modal-section-block">
-        <h4 class="modal-block-heading">Planetary Transits & Psychological Timing</h4>
-        <p>Understanding Saturn returns, Mercury retrograde reflection periods, and lunar tides enables you to co-create with cosmic timing rather than feeling at the mercy of chaotic circumstance.</p>
-      </div>
-      <div class="modal-cta-box">
-        <a href="#booking-sanctum" class="modal-action-link" onclick="closeAllModals()">Request an Astrological Blueprint →</a>
-      </div>
-    `
-  },
-  psyche: {
-    title: 'The Human Psyche',
-    subtitle: 'Jungian Analytical Psychology & Symbolic Integration',
-    content: `
-      <p class="modal-lead">"Until you make the unconscious conscious, it will direct your life and you will call it fate." — Carl Gustav Jung</p>
-      <div class="modal-section-block">
-        <h4 class="modal-block-heading">The Core Pillars of Our Work</h4>
-        <ul>
-          <li><strong>The Shadow:</strong> Integrating the repressed, hidden, and unexpressed gold of the subconscious mind.</li>
-          <li><strong>Synchronicity:</strong> Meaningful coincidences that occur during tarot readings, reflecting the acausal connection between inner psyche and outer events.</li>
-          <li><strong>The Collective Unconscious:</strong> Ancient symbols and mythologies that resonate across all human cultures and emerge in our card spreads.</li>
-        </ul>
-      </div>
-    `
-  },
-  spreads: {
-    title: 'Tarot Spreads and Interpretations',
-    subtitle: 'Custom Geometries for Subconscious Inquiries',
-    content: `
-      <p class="modal-lead">Every tarot spread is a sacred mandala designed to illuminate different corridors of inquiry.</p>
-      <div class="modal-section-block">
-        <h4 class="modal-block-heading">Featured Spreads by Smayra</h4>
-        <ul>
-          <li><strong>The Unconscious Blueprint Spread:</strong> As developed for university sessions, diagnosing hidden subconscious scripts driving current relational dynamics.</li>
-          <li><strong>The 3-Card Temporal Mirror:</strong> Root Cause (Past), Present Dynamic (Conscious Energy), Emerging Trajectory (Subconscious Direction).</li>
-          <li><strong>The Celtic Cross:</strong> A comprehensive 10-card multidimensional diagnostic of situation, challenges, subconscious roots, advice, and outcome.</li>
-        </ul>
-      </div>
-    `
-  },
-  readings: {
-    title: 'Private Readings & Consultations',
-    subtitle: 'One-on-One Personalized Sanctuary Sessions',
-    content: `
-      <p class="modal-lead">Every private reading is conducted with complete confidentiality, compassion, and psychological depth.</p>
-      <div class="modal-section-block">
-        <h4 class="modal-block-heading">Session Formats</h4>
-        <p>We offer both online video sessions and in-person sanctuary readings (including exclusive campus sessions). Sessions include pre-cleansing with singing bowl, crystal focus, card spread exploration, and audio recording or detailed takeaway summary.</p>
-      </div>
-      <div class="modal-cta-box">
-        <p>Direct Orders & Bookings:</p>
-        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
-          <a href="mailto:samayraasipaya@gmail.com?subject=Order%20Private%20Tarot%20Reading%20with%20Smayra&body=Hello%20Smayra,%0A%0AI%20would%20like%20to%20order%20a%20private%20reading%20session.%0A%0AName:%20%0APreferred%20Date%20/%20Time:%20%0AQuestions:%20" class="modal-action-link">Order via Email (samayraasipaya@gmail.com) →</a>
-          <a href="https://wa.me/?text=Hello%20Smayra,%20I%20would%20love%20to%20book%20a%20private%20tarot%20reading%20session%20with%20you." target="_blank" class="modal-action-link" style="background: #25d366; color: #03070e;">WhatsApp →</a>
+function initReadingsCatalog() {
+  const container = document.getElementById('readings-catalog-grid');
+  const filterTabs = document.querySelectorAll('.category-tab-pill');
+
+  if (!container) return;
+
+  function renderReadings(activeCategory = 'all') {
+    container.innerHTML = '';
+
+    const filtered = activeCategory === 'all'
+      ? READINGS_DATA
+      : READINGS_DATA.filter((r) => r.category === activeCategory);
+
+    filtered.forEach((reading) => {
+      const card = document.createElement('article');
+      card.className = 'reading-service-card';
+      card.setAttribute('data-reading-id', reading.id);
+
+      card.innerHTML = `
+        <div>
+          <div class="service-card-meta">
+            <span class="service-category-badge">${reading.categoryName}</span>
+            <span class="service-price-tag">₹${reading.price.toLocaleString('en-IN')}</span>
+          </div>
+          <h3 class="service-card-title">${reading.name}</h3>
+          <p class="service-card-desc">${reading.description}</p>
         </div>
-      </div>
-    `
-  },
-  year: {
-    title: 'Your Year, Unfolded',
-    subtitle: '12-Month Celestial Forecast & Solar Return',
-    content: `
-      <p class="modal-lead">Step into the upcoming year with strategic clarity, celestial foresight, and aligned intentionality.</p>
-      <div class="modal-section-block">
-        <h4 class="modal-block-heading">What the Year-Ahead Reading Covers</h4>
-        <ul>
-          <li>Your overarching Archetype of the Year (calculated through your numerological & astrological birth card).</li>
-          <li>Month-by-month card draws identifying key themes, challenges, and opportunities.</li>
-          <li>Key cosmic transition dates, eclipses, and lunar windows for personal milestone planning.</li>
-        </ul>
-      </div>
-    `
-  },
-  experiences: {
-    title: 'My Work and Experiences',
-    subtitle: 'Real World Readings, Campus Stalls & Community Connection',
-    content: `
-      <p class="modal-lead">Taking tarot beyond ivory towers into real-world student and community spaces.</p>
-      <div class="modal-section-block">
-        <h4 class="modal-block-heading">The University Reading Stall</h4>
-        <p>Smayra founded the acclaimed reading stall on campus at Chandigarh University featuring banners like <em>"The Conscious Blueprint Testing"</em> and <em>"Help! Kindly Make My Sad Friend Laugh!!"</em>, touching hundreds of students facing career anxiety, relationship decisions, and self-doubt.</p>
-      </div>
-      <div class="modal-section-block">
-        <h4 class="modal-block-heading">Client Real Results</h4>
-        <p>Clients consistently report tangible breakthroughs: seeing their life with unified clarity instead of fragmented confusion, and finding actionable confidence.</p>
-      </div>
-    `
-  }
-};
+        <div class="service-card-actions">
+          <button class="book-now-direct-btn" data-action="book-direct" data-id="${reading.id}">
+            <span>Book Now</span>
+            <span>➔</span>
+          </button>
+          <button class="add-to-cart-btn" data-action="add-cart" data-id="${reading.id}">
+            <span>+ Add to Cart</span>
+          </button>
+        </div>
+      `;
 
-function initStoryAndDestinationModals() {
-  const modalBackdrop = document.getElementById('details-modal');
-  const modalTitle = document.getElementById('modal-title');
-  const modalSubtitle = document.getElementById('modal-subtitle');
-  const modalBody = document.getElementById('modal-body');
-  const closeBtn = document.getElementById('modal-close');
+      container.appendChild(card);
+    });
 
-  if (!modalBackdrop) return;
+    // Bind action buttons
+    container.querySelectorAll('[data-action="book-direct"]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-id');
+        const reading = READINGS_DATA.find((r) => r.id === id);
+        if (reading) openDirectMailto(reading);
+      });
+    });
 
-  window.closeAllModals = function () {
-    modalBackdrop.classList.remove('open');
-    document.body.style.overflow = '';
-  };
-
-  // "Discover My Story" Trigger
-  const discoverStoryBtn = document.querySelector('.discover-story-btn');
-  if (discoverStoryBtn) {
-    discoverStoryBtn.addEventListener('click', () => {
-      if (modalTitle) modalTitle.textContent = 'Discover My Story — Smayra';
-      if (modalSubtitle) modalSubtitle.textContent = 'Student of the Psyche, Explorer of Symbols';
-      if (modalBody) {
-        modalBody.innerHTML = `
-          <p class="modal-lead">"My work is not about foretelling a rigid fate; it is about awakening the inner cartographer inside of you."</p>
-          <div class="modal-section-block">
-            <h4 class="modal-block-heading">The Journey of Smayra</h4>
-            <p>I began reading cards not as a parlor trick or superstition, but as an avid student fascinated by how human beings process pain, love, destiny, and decision-making. Studying psychology alongside traditional Hermetic symbolism, I realized the cards are an external mirror reflecting what the conscious ego often denies.</p>
-          </div>
-          <div class="modal-section-block">
-            <h4 class="modal-block-heading">The Campus Stalls & The Human Connection</h4>
-            <p>At Chandigarh University, I set up interactive stalls under banners like <em>'The Unconscious Blueprint'</em>. Students and seekers from all walks of life came sat at my table—shuffling cards amidst singing bowls and incense, seeking answers to their heartbreaks, ambitions, and fears. Witnessing their faces light up with clarity proved to me that when tarot is approached with psychological integrity, it transforms lives.</p>
-          </div>
-          <div class="modal-section-block">
-            <h4 class="modal-block-heading">My Philosophy</h4>
-            <p>You are never passive in your life story. The cards reveal the current energetic currents and subconscious tendencies; your conscious will and informed decisions determine where you steer your ship.</p>
-          </div>
-          <div class="modal-cta-box">
-            <p>Follow my daily reflections, card wisdom, and updates:</p>
-            <a href="https://instagram.com/smayra.sipayaa" target="_blank" class="modal-action-link">Connect with me on Instagram @smayra.sipayaa →</a>
-          </div>
-        `;
-      }
-      modalBackdrop.classList.add('open');
-      document.body.style.overflow = 'hidden';
+    container.querySelectorAll('[data-action="add-cart"]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-id');
+        addToCart(id);
+      });
     });
   }
 
-  // Destination Cards Click Handlers
-  const destinationCards = document.querySelectorAll('[data-destination-key]');
-  destinationCards.forEach((card) => {
-    card.addEventListener('click', () => {
-      const key = card.getAttribute('data-destination-key');
-      const data = DESTINATIONS_DATA[key];
-      if (!data) return;
+  // Initial render of all readings
+  renderReadings('all');
 
-      if (modalTitle) modalTitle.textContent = data.title;
-      if (modalSubtitle) modalSubtitle.textContent = data.subtitle;
-      if (modalBody) modalBody.innerHTML = data.content;
-
-      modalBackdrop.classList.add('open');
-      document.body.style.overflow = 'hidden';
+  // Filter tabs click
+  filterTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      filterTabs.forEach((t) => t.classList.remove('active'));
+      tab.classList.add('active');
+      const category = tab.getAttribute('data-category');
+      renderReadings(category);
     });
-  });
-
-  if (closeBtn) closeBtn.addEventListener('click', window.closeAllModals);
-  modalBackdrop.addEventListener('click', (e) => {
-    if (e.target === modalBackdrop) window.closeAllModals();
-  });
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalBackdrop.classList.contains('open')) {
-      window.closeAllModals();
-    }
   });
 }
 
 /* ==========================================================================
-   8. AMBIENT CELESTIAL AUDIO (SYNTHESIZED 432Hz HARMONIC CHORD)
+   10. CART SYSTEM & EMAIL-BASED BOOKING (samayraasipaya@gmail.com)
+   ========================================================================== */
+let cartItems = [];
+
+function initCartSystem() {
+  const cartBtn = document.getElementById('nav-cart-btn');
+  const cartBackdrop = document.getElementById('cart-drawer-modal');
+  const cartCloseBtn = document.getElementById('cart-close-btn');
+  const cartItemsList = document.getElementById('cart-items-container');
+  const cartTotalAmount = document.getElementById('cart-total-amount');
+  const cartCountBadges = document.querySelectorAll('.cart-count-badge');
+  const checkoutBtn = document.getElementById('cart-checkout-email');
+  const copyBtn = document.getElementById('cart-copy-details');
+  const toast = document.getElementById('cart-toast');
+
+  // Load cart from localStorage
+  try {
+    const saved = localStorage.getItem('smayra_cart');
+    if (saved) cartItems = JSON.parse(saved);
+  } catch (e) {
+    cartItems = [];
+  }
+
+  window.addToCart = function (readingId) {
+    const reading = READINGS_DATA.find((r) => r.id === readingId);
+    if (!reading) return;
+
+    if (!cartItems.find((item) => item.id === readingId)) {
+      cartItems.push(reading);
+      saveCart();
+      showToast(`Added "${reading.name}" to cart`);
+    } else {
+      showToast(`"${reading.name}" is already in your cart`);
+    }
+
+    updateCartUI();
+  };
+
+  window.removeFromCart = function (readingId) {
+    cartItems = cartItems.filter((item) => item.id !== readingId);
+    saveCart();
+    updateCartUI();
+  };
+
+  function saveCart() {
+    try {
+      localStorage.setItem('smayra_cart', JSON.stringify(cartItems));
+    } catch (e) {}
+  }
+
+  function updateCartUI() {
+    const totalCount = cartItems.length;
+    cartCountBadges.forEach((b) => (b.textContent = totalCount));
+
+    if (!cartItemsList) return;
+
+    if (totalCount === 0) {
+      cartItemsList.innerHTML = `<div class="cart-empty-message">Your cart is empty. Explore our readings and select one to book.</div>`;
+      if (cartTotalAmount) cartTotalAmount.textContent = '₹0';
+      return;
+    }
+
+    cartItemsList.innerHTML = '';
+    let total = 0;
+
+    cartItems.forEach((item) => {
+      total += item.price;
+      const row = document.createElement('div');
+      row.className = 'cart-item-card';
+      row.innerHTML = `
+        <div>
+          <div class="cart-item-name">${item.name}</div>
+          <div style="font-size: 0.72rem; color: var(--color-silver-moon); text-transform: uppercase;">${item.categoryName}</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <span class="cart-item-price">₹${item.price.toLocaleString('en-IN')}</span>
+          <button class="cart-item-remove-btn" onclick="removeFromCart('${item.id}')" title="Remove reading">✕</button>
+        </div>
+      `;
+      cartItemsList.appendChild(row);
+    });
+
+    if (cartTotalAmount) {
+      cartTotalAmount.textContent = `₹${total.toLocaleString('en-IN')}`;
+    }
+  }
+
+  updateCartUI();
+
+  // Drawer open / close
+  function openCart() {
+    if (cartBackdrop) {
+      cartBackdrop.classList.add('open');
+      cartBackdrop.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeCart() {
+    if (cartBackdrop) {
+      cartBackdrop.classList.remove('open');
+      cartBackdrop.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (cartBtn) cartBtn.addEventListener('click', openCart);
+  if (cartCloseBtn) cartCloseBtn.addEventListener('click', closeCart);
+  if (cartBackdrop) {
+    cartBackdrop.addEventListener('click', (e) => {
+      if (e.target === cartBackdrop) closeCart();
+    });
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && cartBackdrop && cartBackdrop.classList.contains('open')) {
+      closeCart();
+    }
+  });
+
+  // Generate Booking Email
+  function generateBookingEmailContent() {
+    const name = document.getElementById('booking-client-name')?.value.trim() || '[Your Name]';
+    const email = document.getElementById('booking-client-email')?.value.trim() || '[Your Email]';
+    const dob = document.getElementById('booking-client-dob')?.value.trim() || '[Optional / Not Provided]';
+    const question = document.getElementById('booking-client-question')?.value.trim() || '[Describe your question]';
+    const context = document.getElementById('booking-client-context')?.value.trim() || '[Describe your context]';
+    const specific = document.getElementById('booking-client-specific')?.value.trim() || '[Specific questions]';
+    const format = document.getElementById('booking-client-format')?.value || 'Online Video Consultation';
+
+    const selectedReadingsText = cartItems.map((item) => `${item.name} (₹${item.price.toLocaleString('en-IN')})`).join(', ');
+    const totalPrice = cartItems.reduce((sum, item) => sum + item.price, 0);
+
+    const subject = `Tarot Reading Booking – ${cartItems.map((i) => i.name).join(' & ')}`;
+
+    const body = `Hello,
+
+I would like to book a tarot reading.
+
+Reading Details
+
+Selected Reading: ${selectedReadingsText}
+Price: ₹${totalPrice.toLocaleString('en-IN')}
+
+My Information
+
+Name: ${name}
+Email Address: ${email}
+Date of Birth (Optional): ${dob}
+
+About My Reading
+
+What would you like to explore?
+Please describe your question or concern:
+${question}
+
+Additional background or context:
+${context}
+
+Are there any specific questions you would like addressed?
+${specific}
+
+Preferred Reading Format:
+${format}
+
+Thank you. I look forward to hearing from you.`;
+
+    return { subject, body };
+  }
+
+  // Send Email Button
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener('click', () => {
+      if (cartItems.length === 0) {
+        alert('Please add at least one reading to your cart before proceeding.');
+        return;
+      }
+
+      const { subject, body } = generateBookingEmailContent();
+      const mailtoUrl = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoUrl;
+    });
+  }
+
+  // Copy Details Button
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      if (cartItems.length === 0) {
+        alert('Your cart is empty.');
+        return;
+      }
+      const { subject, body } = generateBookingEmailContent();
+      const fullText = `Subject: ${subject}\n\nTo: ${BUSINESS_EMAIL}\n\n${body}`;
+
+      navigator.clipboard.writeText(fullText).then(() => {
+        showToast('Booking details copied! You can paste in Gmail or WhatsApp.');
+      });
+    });
+  }
+
+  function showToast(message) {
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3200);
+  }
+}
+
+// Direct mailto for single reading
+window.openDirectMailto = function (reading) {
+  const subject = `Tarot Reading Booking – ${reading.name}`;
+  const body = `Hello,
+
+I would like to book a tarot reading.
+
+Reading Details
+
+Selected Reading: ${reading.name}
+Price: ₹${reading.price.toLocaleString('en-IN')}
+
+My Information
+
+Name: 
+Email Address: 
+Date of Birth (Optional): 
+
+About My Reading
+
+What would you like to explore?
+Please describe your question or concern:
+
+Additional background or context:
+
+Are there any specific questions you would like addressed?
+
+Preferred Reading Format:
+
+Thank you. I look forward to hearing from you.`;
+
+  window.location.href = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+};
+
+/* ==========================================================================
+   11. AMBIENT CELESTIAL AUDIO (432Hz HARMONIC SYNTHESIZER)
    ========================================================================== */
 function initCelestialAudio() {
   const soundBtn = document.querySelector('.sound-toggle-btn');
@@ -636,7 +1011,6 @@ function initCelestialAudio() {
     masterGain.gain.setValueAtTime(0.001, audioCtx.currentTime);
     masterGain.connect(audioCtx.destination);
 
-    // Warm, meditative frequencies around 432Hz (432Hz, 216Hz, 648Hz, 540Hz)
     const freqs = [108, 216, 432, 540, 648];
 
     oscillators = freqs.map((f) => {
@@ -645,7 +1019,6 @@ function initCelestialAudio() {
 
       osc.type = 'sine';
       osc.frequency.setValueAtTime(f, audioCtx.currentTime);
-
       oscGain.gain.setValueAtTime(0.04 / freqs.length, audioCtx.currentTime);
 
       osc.connect(oscGain);
@@ -656,13 +1029,8 @@ function initCelestialAudio() {
   }
 
   function toggleAudio() {
-    if (!audioCtx) {
-      createCelestialPad();
-    }
-
-    if (audioCtx.state === 'suspended') {
-      audioCtx.resume();
-    }
+    if (!audioCtx) createCelestialPad();
+    if (audioCtx.state === 'suspended') audioCtx.resume();
 
     if (!isPlaying) {
       masterGain.gain.exponentialRampToValueAtTime(0.18, audioCtx.currentTime + 2.5);

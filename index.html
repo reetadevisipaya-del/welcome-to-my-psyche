@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to My Psyche — Smayra | Tarot, Astrology & The Human Experience</title>
-  <meta name="description" content="A new world of symbols, stories & self-discovery. Where tarot, astrology, psychology and the mysteries of the human experience meet. Meet Smayra, independent tarot practitioner.">
+  <meta name="description" content="Meet Smayra — intuitive tarot reader combining traditional tarot interpretation, Jungian psychology, archetypal symbolism, Hermetic philosophy and esoteric studies. Book a personalized tarot reading directly via email.">
   <link rel="icon" type="image/jfif" href="assets/images/celestial-portal.jfif">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -40,13 +40,9 @@
     <nav aria-label="Main Navigation">
       <ul class="nav-menu">
         <li><a href="#celestial-portal" class="nav-link">The Portal</a></li>
-        <li><a href="#meet-practitioner" class="nav-link">Smayra</a></li>
-        <li><a href="#enter-my-world" class="nav-link">The 7 Worlds</a></li>
-        <li><a href="#daily-draw" class="nav-link">Daily Draw</a></li>
-        <li><a href="#psyche-editorial" class="nav-link">The Psyche</a></li>
-        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-        <li><a href="#altar-experiences" class="nav-link">Altar & Stalls</a></li>
-        <li><a href="#booking-sanctum" class="nav-link">Readings</a></li>
+        <li><a href="#about-me" class="nav-link">About Me</a></li>
+        <li><a href="#client-testimonials" class="nav-link">Testimonials</a></li>
+        <li><a href="#choose-reading" class="nav-link">Book a Reading</a></li>
       </ul>
     </nav>
 
@@ -56,8 +52,14 @@
         🔇
       </button>
 
+      <!-- Cart Button with Live Counter -->
+      <button class="nav-cart-btn" id="nav-cart-btn" aria-label="View selected readings cart">
+        <span>🛒 Cart</span>
+        <span class="cart-count-badge">0</span>
+      </button>
+
       <!-- Booking CTA -->
-      <a href="#booking-sanctum" class="nav-cta-btn">
+      <a href="#choose-reading" class="nav-cta-btn">
         <span>Book Reading</span>
         <span>✦</span>
       </a>
@@ -71,8 +73,8 @@
 
   <main>
     <!-- =======================================================================
-         SCENE 1 — THE CELESTIAL PORTAL
-         Cinematic celestial opening using the exact uploaded reference artwork
+         HERO: THE CELESTIAL PORTAL
+         Full-screen cinematic celestial opening using the exact reference artwork
          ======================================================================= -->
     <section id="celestial-portal" class="scene-portal-section" aria-label="Scene 1: The Celestial Portal">
       
@@ -80,7 +82,7 @@
       <button class="skip-intro-btn" id="skip-intro-btn">Skip Intro ➔</button>
 
       <div class="portal-stage">
-        <!-- The Exact Uploaded Reference Artwork Container with Parallax & Subtle Depth -->
+        <!-- The Exact Reference Artwork Container with Parallax & Subtle Depth -->
         <div class="portal-visual-wrap" id="portal-visual-wrap">
           <img 
             src="assets/images/celestial-portal.jfif" 
@@ -132,7 +134,7 @@
           </div>
 
           <div class="portal-bottom-group">
-            <a href="#meet-practitioner" class="enter-universe-btn" id="enter-universe-cta">
+            <a href="#about-me" class="enter-universe-btn" id="enter-universe-cta">
               <span>ENTER MY UNIVERSE</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -140,7 +142,7 @@
             </a>
 
             <!-- Subtle Scroll Cue -->
-            <a href="#meet-practitioner" class="scroll-entrance-cue" aria-label="Scroll to descend">
+            <a href="#about-me" class="scroll-entrance-cue" aria-label="Scroll to descend">
               <span>Scroll to Descend</span>
               <svg class="scroll-chevron-anim" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M7 10l5 5 5-5"/>
@@ -152,764 +154,729 @@
     </section>
 
     <!-- =======================================================================
-         SCENE 2 — MEET THE PRACTITIONER
-         Ethereal editorial portrait composition using Smayra's actual photograph
+         SECTION 1: ABOUT ME
+         Meet Your Tarot Reader, My Journey, Philosophy, Interpretive Approach,
+         Pictures at Work & Interactive Shuffle a Card
          ======================================================================= -->
-    <section id="meet-practitioner" class="scene-practitioner-section" aria-label="Scene 2: Meet the Practitioner">
-      <div class="practitioner-container">
+    <section id="about-me" class="about-me-section" aria-label="1. About Me">
+      <div class="about-me-container">
         
-        <!-- Left Column: Editorial Portrait Framed with Astrological Elements -->
-        <div class="practitioner-portrait-col">
-          <div class="editorial-portrait-frame">
-            
-            <!-- Surrounding SVG Celestial Chart & Zodiac Constellations -->
-            <svg class="portrait-celestial-chart" viewBox="0 0 500 600" fill="none" aria-hidden="true">
-              <circle cx="250" cy="270" r="230" stroke="rgba(207, 168, 68, 0.3)" stroke-width="1" stroke-dasharray="2 6"/>
-              <circle cx="250" cy="270" r="210" stroke="rgba(157, 141, 241, 0.25)" stroke-width="0.8"/>
-              <circle cx="250" cy="270" r="248" stroke="rgba(207, 168, 68, 0.15)" stroke-width="1.2"/>
-              <!-- Subtle zodiac radial rays -->
-              <line x1="250" y1="20" x2="250" y2="520" stroke="rgba(207, 168, 68, 0.2)" stroke-width="0.5"/>
-              <line x1="20" y1="270" x2="480" y2="270" stroke="rgba(207, 168, 68, 0.2)" stroke-width="0.5"/>
-              <line x1="87" y1="107" x2="413" y2="433" stroke="rgba(207, 168, 68, 0.15)" stroke-width="0.5"/>
-              <line x1="87" y1="433" x2="413" y2="107" stroke="rgba(207, 168, 68, 0.15)" stroke-width="0.5"/>
-            </svg>
-
-            <!-- Antique Gold Arch Framing Smayra's Authentic Photo -->
-            <div class="portrait-inner-arch">
-              <img 
-                src="assets/images/smayra-portrait.jpeg" 
-                alt="Smayra — Independent Tarot Practitioner and Student of the Human Psyche" 
-                class="practitioner-actual-img"
-              >
-            </div>
-
-            <!-- Apex Sun & Base Moon Medallions -->
-            <div class="portrait-framing-accent accent-apex-sun" title="Solar Consciousness" aria-hidden="true">
-              <span style="font-size: 1.4rem; color: #5c430e;">☉</span>
-            </div>
-            <div class="portrait-framing-accent accent-base-moon" title="Lunar Intuition" aria-hidden="true">
-              <span style="font-size: 1.2rem; color: #1e3a5f;">☽</span>
-            </div>
-
-            <!-- Golden Planetary Glyphs -->
-            <div class="planetary-glyphs-floating" aria-label="Planetary Glyphs: Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn">
-              <span title="Sun">☉</span>
-              <span title="Moon">☽</span>
-              <span title="Mercury">☿</span>
-              <span title="Venus">♀</span>
-              <span title="Mars">♂</span>
-              <span title="Jupiter">♃</span>
-              <span title="Saturn">♄</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Column: Editorial Typography & Practitioner Introduction -->
-        <div class="practitioner-content-col">
-          <div class="editorial-badge">
+        <header class="about-header-wrap">
+          <div class="editorial-badge" style="margin-bottom: 0.85rem;">
             <span>✦</span>
-            <span>THE PRACTITIONER & ARCHETYPE GUIDE</span>
+            <span>SECTION 01 • MEET YOUR TAROT READER</span>
             <span>✦</span>
           </div>
-
-          <h2 class="practitioner-heading">Meet the Mind Behind the Cards.</h2>
-
-          <p class="practitioner-intro-lead">
-            "I am Smayra. A student of the human psyche, an explorer of symbolism and an independent tarot practitioner."
-          </p>
-
-          <p class="practitioner-body-text">
-            My world exists at the intersection of tarot, astrology, psychology, philosophy, intuition and the endless complexity of human experience.
-          </p>
-
-          <p class="practitioner-body-text">
-            Rather than treating tarot as a predictive parlor trick or fatalistic verdict, I approach each reading as an intuitive psychological mirror. Drawing on Carl Jung's concepts of synchronicity, archetypes, and shadow integration, our sessions reveal the subconscious scripts guiding your relationships, career decisions, and soul evolution.
-          </p>
-
-          <div class="practitioner-tags-wrap">
-            <span class="practitioner-tag">Analytical Psychology</span>
-            <span class="practitioner-tag">Subconscious Blueprint Mapping</span>
-            <span class="practitioner-tag">Hermetic Symbolism</span>
-            <span class="practitioner-tag">Campus & Community Readings</span>
-          </div>
-
-          <div class="practitioner-actions">
-            <button class="discover-story-btn">
-              <span>Discover My Story</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </button>
-
-            <a href="mailto:samayraasipaya@gmail.com?subject=Inquiry%20/%20Tarot%20Reading%20with%20Smayra" class="email-handle-btn" title="Email Smayra for inquiries & bookings">
-              <span>✉️</span>
-              <span>samayraasipaya@gmail.com</span>
-            </a>
-
-            <a href="https://instagram.com/smayra.sipayaa" target="_blank" rel="noopener noreferrer" class="instagram-handle-btn">
-              <span>📸</span>
-              <span>@smayra.sipayaa</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =======================================================================
-         SCENE 3 — ENTER MY WORLD
-         The 7 Illustrated Celestial Destinations
-         ======================================================================= -->
-    <section id="enter-my-world" class="scene-world-section" aria-label="Scene 3: Enter My World">
-      <div class="section-header-cosmic">
-        <p class="section-eyebrow">✦ SEVEN SACRED REALMS ✦</p>
-        <h2 class="section-heading-cosmic">Enter My World</h2>
-        <p class="section-subtext-cosmic">
-          Traveling from the celestial cosmos into a personal sanctuary of knowledge, archetypes, and self-discovery.
-        </p>
-      </div>
-
-      <!-- The 7 Destinations Grid -->
-      <div class="destinations-grid">
-        
-        <!-- Destination 1: The Tarot Library -->
-        <article class="destination-card" data-destination-key="library">
-          <div class="dest-top-meta">
-            <span class="dest-number">REALM 01</span>
-            <span class="dest-badge">78 Archetypes</span>
-          </div>
-          <div class="dest-illustration-wrap">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-              <rect x="4" y="2" width="16" height="20" rx="3"/>
-              <circle cx="12" cy="10" r="3"/>
-              <path d="M12 15v3"/>
-              <path d="M9 18h6"/>
-            </svg>
-          </div>
-          <h3 class="dest-title">The Tarot Library</h3>
-          <p class="dest-desc">
-            An illustrated compendium of the 22 Major Arcana archetypes and the 56 elemental pathways of human experience.
-          </p>
-          <span class="dest-link-btn">
-            <span>Explore the Library</span>
-            <span>➔</span>
-          </span>
-        </article>
-
-        <!-- Destination 2: Astrology and Celestial Studies -->
-        <article class="destination-card" data-destination-key="astrology">
-          <div class="dest-top-meta">
-            <span class="dest-number">REALM 02</span>
-            <span class="dest-badge">Planetary Cycles</span>
-          </div>
-          <div class="dest-illustration-wrap">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-              <circle cx="12" cy="12" r="9"/>
-              <ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(30 12 12)"/>
-              <circle cx="12" cy="12" r="2" fill="currentColor"/>
-            </svg>
-          </div>
-          <h3 class="dest-title">Astrology & Celestial Studies</h3>
-          <p class="dest-desc">
-            Deciphering the cosmic architecture of your psyche: Sun, Moon, and Rising triad, planetary transits, and retrogrades.
-          </p>
-          <span class="dest-link-btn">
-            <span>Discover Celestial Studies</span>
-            <span>➔</span>
-          </span>
-        </article>
-
-        <!-- Destination 3: The Human Psyche -->
-        <article class="destination-card" data-destination-key="psyche">
-          <div class="dest-top-meta">
-            <span class="dest-number">REALM 03</span>
-            <span class="dest-badge">Jungian Depth</span>
-          </div>
-          <div class="dest-illustration-wrap">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-              <path d="M12 3a9 9 0 0 0-9 9c0 3.6 2.1 6.7 5.1 8.1.5.2.9-.2.9-.7v-2.5c0-.6.4-1.1 1-1.2A5 5 0 0 1 12 7a5 5 0 0 1 5 5c0 1.2-.5 2.3-1.2 3.1-.4.4-.3 1.1.2 1.4l1.8 1.1c2.4-1.6 3.9-4.3 3.9-7.3a9 9 0 0 0-9-9z"/>
-              <circle cx="12" cy="12" r="2.5" fill="currentColor"/>
-            </svg>
-          </div>
-          <h3 class="dest-title">The Human Psyche</h3>
-          <p class="dest-desc">
-            Shadow work, the collective unconscious, dream symbolism, and bridging analytical psychology with esoteric mirrors.
-          </p>
-          <span class="dest-link-btn">
-            <span>Delve into the Psyche</span>
-            <span>➔</span>
-          </span>
-        </article>
-
-        <!-- Destination 4: Tarot Spreads and Interpretations -->
-        <article class="destination-card" data-destination-key="spreads">
-          <div class="dest-top-meta">
-            <span class="dest-number">REALM 04</span>
-            <span class="dest-badge">Sacred Mandalas</span>
-          </div>
-          <div class="dest-illustration-wrap">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-              <rect x="2" y="7" width="6" height="10" rx="1.5"/>
-              <rect x="9" y="4" width="6" height="16" rx="1.5"/>
-              <rect x="16" y="7" width="6" height="10" rx="1.5"/>
-            </svg>
-          </div>
-          <h3 class="dest-title">Tarot Spreads & Interpretations</h3>
-          <p class="dest-desc">
-            Geometries of inquiry: The Conscious Blueprint spread, The 3-Card Temporal Mirror, Celtic Cross, and relationship dynamics.
-          </p>
-          <span class="dest-link-btn">
-            <span>Explore Spreads</span>
-            <span>➔</span>
-          </span>
-        </article>
-
-        <!-- Destination 5: Private Readings -->
-        <article class="destination-card featured-dest" data-destination-key="readings">
-          <div class="dest-top-meta">
-            <span class="dest-number">REALM 05</span>
-            <span class="dest-badge" style="background: rgba(207, 168, 68, 0.2); color: var(--color-gold-light);">1-on-1 Sessions</span>
-          </div>
-          <div class="dest-illustration-wrap" style="border-color: var(--color-gold); background: radial-gradient(circle, rgba(207, 168, 68, 0.3) 0%, rgba(5, 11, 20, 0.7) 80%);">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-          </div>
-          <h3 class="dest-title">Private Readings</h3>
-          <p class="dest-desc">
-            Confidential, compassionate consultations designed to untangle emotional knots, reveal blind spots, and empower your path.
-          </p>
-          <span class="dest-link-btn" style="color: var(--color-gold-light);">
-            <span>Book a Reading</span>
-            <span>➔</span>
-          </span>
-        </article>
-
-        <!-- Destination 6: Your Year, Unfolded -->
-        <article class="destination-card" data-destination-key="year">
-          <div class="dest-top-meta">
-            <span class="dest-number">REALM 06</span>
-            <span class="dest-badge">12-Month Compass</span>
-          </div>
-          <div class="dest-illustration-wrap">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M12 6v6l4 2"/>
-              <circle cx="12" cy="12" r="1" fill="currentColor"/>
-            </svg>
-          </div>
-          <h3 class="dest-title">Your Year, Unfolded</h3>
-          <p class="dest-desc">
-            A 12-month solar and lunar roadmap, revealing your dominant yearly archetype, seasonal opportunities, and soul milestones.
-          </p>
-          <span class="dest-link-btn">
-            <span>Forecast Your Year</span>
-            <span>➔</span>
-          </span>
-        </article>
-
-        <!-- Destination 7: My Work and Experiences -->
-        <article class="destination-card featured-dest featured-dest-wide" data-destination-key="experiences">
-          <div class="dest-top-meta">
-            <span class="dest-number">REALM 07</span>
-            <span class="dest-badge">Campus Stalls & Live Sessions</span>
-          </div>
-          <div class="dest-illustration-wrap">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-          </div>
-          <h3 class="dest-title">My Work & Experiences</h3>
-          <p class="dest-desc">
-            Bringing tarot to university grounds: "The Conscious Blueprint Testing" and "Help! Kindly Make My Sad Friend Laugh" live reading tables. Real conversations, real transformations, and community energy.
-          </p>
-          <span class="dest-link-btn">
-            <span>View Campus Work & Community</span>
-            <span>➔</span>
-          </span>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- =======================================================================
-         INTERACTIVE FEATURE: "DRAW YOUR CELESTIAL ARCHETYPE"
-         Interactive 3D Card Draw Experience
-         ======================================================================= -->
-    <section id="daily-draw" class="card-draw-section" aria-label="Interactive Card Draw">
-      <div class="draw-container">
-        <div class="editorial-badge" style="margin-bottom: 0.75rem;">
-          <span>✦</span>
-          <span>ORACLE OF THE UNCONSCIOUS</span>
-          <span>✦</span>
-        </div>
-
-        <h2 class="section-heading-cosmic" style="font-size: clamp(2rem, 3.8vw, 3rem);">
-          Draw Your Celestial Archetype
-        </h2>
-
-        <p class="section-subtext-cosmic" style="max-width: 650px;">
-          Pause, center your breath, and draw a card. Let your subconscious mind meet the symbol waiting for you today.
-        </p>
-
-        <div class="deck-altar-interactive">
-          <div class="tarot-card-flipper" title="Click to draw and flip your card">
-            <div class="tarot-card-inner">
-              <!-- Card Back -->
-              <div class="tarot-card-back">
-                <div class="card-back-pattern">
-                  <span style="font-size: 2.2rem; color: var(--color-gold);">✦</span>
-                  <span style="font-family: var(--font-serif); font-size: 0.7rem; letter-spacing: 0.22em; color: var(--color-gold-light);">MY PSYCHE</span>
-                  <span style="font-size: 1.5rem; color: var(--color-gold-light);">☉ ☽</span>
-                </div>
-              </div>
-
-              <!-- Card Front -->
-              <div class="tarot-card-front">
-                <div class="drawn-card-header">MAJOR ARCANA</div>
-                <div class="drawn-card-glyph">☉</div>
-                <div>
-                  <div class="drawn-card-name">The Sun</div>
-                  <div class="drawn-card-archetype">Vital Awakening</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <button class="draw-btn-trigger">
-            <span>Shuffle & Draw Card</span>
-            <span>✦</span>
-          </button>
-
-          <!-- Dynamic Reading Result Box -->
-          <div class="card-reading-result">
-            <h3 class="reading-archetype-title">The Sun: The Conscious Awakening</h3>
-            <p class="reading-body-text">
-              The Sun illuminates what was once obscured in subconscious shadows. It signals that your clarity is returning, your personal truth is solidifying, and the fragmented pieces of your journey are aligning into integrated confidence.
-            </p>
-            <p class="reading-prompt-action">
-              <strong>Reflective Inquiry:</strong> Where have you been withholding your natural warmth or doubtfully dimming your inner light?
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =======================================================================
-         EDITORIAL SECTION: THE HUMAN PSYCHE & JUNGIAN ESSAYS
-         Contrast Section: Moonlit Ivory & Champagne Editorial Aesthetics
-         ======================================================================= -->
-    <section id="psyche-editorial" class="editorial-psyche-section" aria-label="Editorial: The Human Psyche">
-      <div class="editorial-container">
-        
-        <header class="editorial-header">
-          <p class="editorial-kicker">ESSAYS ON SYMBOLISM & SOUL</p>
-          <h2 class="editorial-title">The Architecture of the Human Psyche</h2>
-          <p class="editorial-sublead">
-            Why tarot is an indispensable map of analytical psychology, archetypal forces, and the inner labyrinth of identity.
+          <h2 class="section-heading-cosmic">About Me</h2>
+          <p class="section-subtext-cosmic">
+            An intuitive tarot reader whose approach combines traditional tarot interpretation, Jungian psychology, archetypal symbolism, Hermetic philosophy and esoteric studies.
           </p>
         </header>
 
-        <div class="editorial-columns">
+        <!-- Split Introduction: Portrait & Journey -->
+        <div class="about-intro-split">
           
-          <!-- Essay 1 -->
-          <article class="editorial-essay-card">
-            <div class="essay-icon">
-              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                <circle cx="12" cy="12" r="9"/>
-                <path d="M12 3v18"/>
-                <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" opacity="0.25"/>
+          <!-- Left: Smayra's Authentic Framed Portrait -->
+          <div class="practitioner-portrait-col">
+            <div class="editorial-portrait-frame">
+              
+              <!-- Surrounding SVG Celestial Chart & Constellations -->
+              <svg class="portrait-celestial-chart" viewBox="0 0 500 600" fill="none" aria-hidden="true">
+                <circle cx="250" cy="270" r="230" stroke="rgba(207, 168, 68, 0.3)" stroke-width="1" stroke-dasharray="2 6"/>
+                <circle cx="250" cy="270" r="210" stroke="rgba(157, 141, 241, 0.25)" stroke-width="0.8"/>
+                <circle cx="250" cy="270" r="248" stroke="rgba(207, 168, 68, 0.15)" stroke-width="1.2"/>
+                <line x1="250" y1="20" x2="250" y2="520" stroke="rgba(207, 168, 68, 0.2)" stroke-width="0.5"/>
+                <line x1="20" y1="270" x2="480" y2="270" stroke="rgba(207, 168, 68, 0.2)" stroke-width="0.5"/>
+                <line x1="87" y1="107" x2="413" y2="433" stroke="rgba(207, 168, 68, 0.15)" stroke-width="0.5"/>
+                <line x1="87" y1="433" x2="413" y2="107" stroke="rgba(207, 168, 68, 0.15)" stroke-width="0.5"/>
               </svg>
+
+              <!-- Antique Gold Arch Framing Smayra's Authentic Photo -->
+              <div class="portrait-inner-arch">
+                <img 
+                  src="assets/images/smayra-portrait.jpeg" 
+                  alt="Smayra — Intuitive Tarot Reader" 
+                  class="practitioner-actual-img"
+                >
+              </div>
+
+              <!-- Apex Sun & Base Moon Medallions -->
+              <div class="portrait-framing-accent accent-apex-sun" title="Solar Consciousness" aria-hidden="true">
+                <span style="font-size: 1.4rem; color: #5c430e;">☉</span>
+              </div>
+              <div class="portrait-framing-accent accent-base-moon" title="Lunar Intuition" aria-hidden="true">
+                <span style="font-size: 1.2rem; color: #1e3a5f;">☽</span>
+              </div>
+
+              <!-- Golden Planetary Glyphs -->
+              <div class="planetary-glyphs-floating" aria-label="Planetary Glyphs: Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn">
+                <span title="Sun">☉</span>
+                <span title="Moon">☽</span>
+                <span title="Mercury">☿</span>
+                <span title="Venus">♀</span>
+                <span title="Mars">♂</span>
+                <span title="Jupiter">♃</span>
+                <span title="Saturn">♄</span>
+              </div>
             </div>
-            <h3 class="essay-title">The Shadow & The Cards</h3>
-            <p class="essay-body">
-              In Jungian depth psychology, the Shadow comprises everything we disown, conceal, or repress to gain social acceptance. When a challenging card like The Tower, The Devil, or Nine of Swords appears, it is not an omen of doom—it is a sacred invitation to integrate unacknowledged psychic material into conscious sovereignty.
-            </p>
-            <p class="essay-quote">
-              "One does not become enlightened by imagining figures of light, but by making the darkness conscious."
-            </p>
-          </article>
-
-          <!-- Essay 2 -->
-          <article class="editorial-essay-card">
-            <div class="essay-icon">
-              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                <path d="M5 22h14M5 2h14M17 2a7 7 0 0 0-5 5 7 7 0 0 0-5-5M17 22a7 7 0 0 1-5-5 7 7 0 0 1-5 5"/>
-                <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
-              </svg>
-            </div>
-            <h3 class="essay-title">Synchronicity: Meaningful Coincidence</h3>
-            <p class="essay-body">
-              Why do specific cards appear when you ask specific questions? Carl Jung termed this <em>synchronicity</em>—an acausal connecting principle where internal psychological states mirror external events. Shuffling cards randomizes the physical deck, allowing the subconscious to project its hidden blueprint upon the symbols.
-            </p>
-            <p class="essay-quote">
-              "Synchronicity is an ever-present reality for those who have eyes to see."
-            </p>
-          </article>
-
-          <!-- Essay 3 -->
-          <article class="editorial-essay-card">
-            <div class="essay-icon">
-              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"/>
-                <circle cx="12" cy="12" r="6" stroke-dasharray="2 3"/>
-                <circle cx="12" cy="12" r="2.5" fill="currentColor"/>
-              </svg>
-            </div>
-            <h3 class="essay-title">The Archetypes of Individuation</h3>
-            <p class="essay-body">
-              The 22 Major Arcana cards depict 'The Fool's Journey'—an exact visual parallel to Jung's individuation process. From initial innocence (The Fool) through encounters with parental archetypes (The Empress & Emperor), crisis of values (The Lovers), solitary truth-seeking (The Hermit), to ultimate self-integration (The World).
-            </p>
-            <p class="essay-quote">
-              "The privilege of a lifetime is to become who you truly are."
-            </p>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =======================================================================
-         AUTHENTIC CLIENT TESTIMONIALS & VIDEO SANCTUARY
-         Features client testimonial.mp4 and authentic WhatsApp screenshots
-         ======================================================================= -->
-    <section id="testimonials" class="testimonials-section" aria-label="Authentic Client Testimonials">
-      
-      <div class="section-header-cosmic">
-        <p class="section-eyebrow">✦ REAL TRANSFORMATIONS & VOICES ✦</p>
-        <h2 class="section-heading-cosmic">Echoes from the Seekers</h2>
-        <p class="section-subtext-cosmic">
-          Real client experiences, WhatsApp conversations, and in-person university testimonials.
-        </p>
-      </div>
-
-      <div class="testimonials-showcase-grid">
-        
-        <!-- Left Column: High-End Video Testimonial Player -->
-        <div class="video-testimonial-card">
-          <div class="video-header-bar">
-            <span class="video-badge">
-              <span>●</span>
-              <span>AUTHENTIC VIDEO TESTIMONIAL</span>
-            </span>
-            <span style="font-family: var(--font-sans); font-size: 0.75rem; color: var(--color-silver-moon);">Verified Session</span>
           </div>
 
-          <div class="video-player-wrap">
-            <video 
-              controls 
-              preload="metadata"
-              poster="assets/altar/reading-campus-1.jpeg"
-              aria-label="Client video testimonial for Smayra's tarot reading"
-            >
-              <source src="assets/video/client-testimonial.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-
-          <p class="video-footer-caption">
-            "A heartfelt client testimonial sharing the emotional clarity, grounding guidance, and real-life impact experienced after a private reading with Smayra."
-          </p>
-          <div class="video-author-name">✦ Client Video Reflection ✦</div>
-        </div>
-
-        <!-- Right Column: Interactive Testimonial Screenshot Showcase -->
-        <div class="testimonials-gallery-col">
-          <div class="testimonial-tabs-bar">
-            <button class="test-tab-btn active" data-filter="all">All Messages</button>
-            <button class="test-tab-btn" data-filter="campus">Campus Sessions</button>
-            <button class="test-tab-btn" data-filter="clarity">Life & Relationship Clarity</button>
-          </div>
-
-          <div class="testimonial-screenshots-grid">
+          <!-- Right: My Journey & Philosophy Narrative -->
+          <div class="practitioner-content-col">
             
-            <!-- Arshaan Testimonial Card -->
-            <div class="screenshot-card" data-category="clarity" data-lightbox-src="assets/testimonials/testimonial-arshaan.jpeg" data-lightbox-caption="Arshaan: 'I used to not believe in these things... but after getting it with Smayra, she made me see my life properly which I was seeing in fragments. It was life changing for me.'">
-              <img src="assets/testimonials/testimonial-arshaan.jpeg" alt="Testimonial screenshot from Arshaan" class="screenshot-img-thumb" loading="lazy">
-              <div class="screenshot-card-overlay">
-                <div class="ss-client-name">Arshaan</div>
-                <div class="ss-client-quote">"It was life changing for me... made me see my life properly which I was seeing in fragments."</div>
-              </div>
-            </div>
+            <article class="narrative-block">
+              <h3 class="narrative-title">
+                <span>✦</span>
+                <span>My Journey</span>
+              </h3>
+              <p class="narrative-p">
+                My journey into tarot, spirituality and esoteric studies began at a young age. Over the years, I have independently explored tarot, occult traditions, Hermetic philosophy, Jungian psychology, archetypal symbolism and different esoteric systems.
+              </p>
+              <p class="narrative-p">
+                My learning has involved extensive reading, research papers, personal notes, symbolic analysis and consistent practical experience with tarot readings.
+              </p>
+              <p class="narrative-p">
+                My personal spiritual exploration further encouraged me to understand the relationship between intuition, symbolism, the subconscious mind and human experiences.
+              </p>
+              <p class="narrative-p" style="color: var(--color-gold-light); font-style: italic; border-left: 2px solid var(--color-gold); padding-left: 1rem;">
+                "I approach tarot as more than a predictive practice. I see it as an intricate symbolic language that can help individuals explore their circumstances, emotional patterns, unconscious influences and possible directions in life."
+              </p>
+            </article>
 
-            <!-- Jahnavi Testimonial Card -->
-            <div class="screenshot-card" data-category="clarity" data-lightbox-src="assets/testimonials/testimonial-jahnavi.jpeg" data-lightbox-caption="Jahnavi: 'Hey thanks a lot for today's session. I really feel overwhelmed rn and I really needed this. It must be exhausting for you too dealing with so many energies.'">
-              <img src="assets/testimonials/testimonial-jahnavi.jpeg" alt="Testimonial screenshot from Jahnavi" class="screenshot-img-thumb" loading="lazy">
-              <div class="screenshot-card-overlay">
-                <div class="ss-client-name">Jahnavi</div>
-                <div class="ss-client-quote">"I really feel overwhelmed rn and I really needed this... grateful for your energy."</div>
-              </div>
-            </div>
+            <article class="narrative-block">
+              <h3 class="narrative-title">
+                <span>✦</span>
+                <span>My Reading Philosophy</span>
+              </h3>
+              <p class="narrative-p">
+                My readings go beyond memorising individual card meanings. I examine the imagery, symbolism, archetypes, elemental associations, numerology and interconnected narratives within a spread.
+              </p>
+              <p class="narrative-p">
+                I believe every reading should be personalised. I focus on understanding the client's actual question and connecting the cards to their circumstances rather than offering generic interpretations.
+              </p>
+              <p class="narrative-p">
+                My intention is to provide thoughtful, compassionate and meaningful guidance in a confidential, non-judgmental environment.
+              </p>
+            </article>
 
-            <!-- Drishti Testimonial Card -->
-            <div class="screenshot-card" data-category="campus" data-lightbox-src="assets/testimonials/testimonial-drishti.jpeg" data-lightbox-caption="Drishti: 'Heyy you did an excellent reading of ours today! Pls let me know whenever you'll be having a stall again.'">
-              <img src="assets/testimonials/testimonial-drishti.jpeg" alt="Testimonial screenshot from Drishti" class="screenshot-img-thumb" loading="lazy">
-              <div class="screenshot-card-overlay">
-                <div class="ss-client-name">Drishti</div>
-                <div class="ss-client-quote">"You did an excellent reading of ours today! Let me know when you have a stall again."</div>
-              </div>
-            </div>
+            <div class="practitioner-actions">
+              <a href="mailto:samayraasipaya@gmail.com?subject=Inquiry%20/%20Tarot%20Reading%20with%20Smayra" class="email-handle-btn" title="Email Smayra for inquiries & bookings">
+                <span>✉️</span>
+                <span>samayraasipaya@gmail.com</span>
+              </a>
 
-            <!-- Results & Membership Request Testimonial Card -->
-            <div class="screenshot-card" data-category="clarity campus" data-lightbox-src="assets/testimonials/testimonial-results.jpeg" data-lightbox-caption="Client Follow-up: 'Hy smayra, your last reading helped a lot and I saw real results after implementing the steps! Can we book another reading or do a membership plan?'">
-              <img src="assets/testimonials/testimonial-results.jpeg" alt="Testimonial screenshot discussing real results" class="screenshot-img-thumb" loading="lazy">
-              <div class="screenshot-card-overlay">
-                <div class="ss-client-name">Shazar / Campus Client</div>
-                <div class="ss-client-quote">"I saw real results after implementing the steps... Can we book another session?"</div>
-              </div>
-            </div>
+              <a href="https://instagram.com/smayra.sipayaa" target="_blank" rel="noopener noreferrer" class="instagram-handle-btn">
+                <span>📸</span>
+                <span>@smayra.sipayaa</span>
+              </a>
 
-            <!-- Friends Booking Testimonial Card -->
-            <div class="screenshot-card" data-category="campus" data-lightbox-src="assets/testimonials/testimonial-booking.jpeg" data-lightbox-caption="Client Booking: 'Ok I will make time, let's book it. And my friends also want to have a reading!'">
-              <img src="assets/testimonials/testimonial-booking.jpeg" alt="Testimonial screenshot booking friend reading" class="screenshot-img-thumb" loading="lazy">
-              <div class="screenshot-card-overlay">
-                <div class="ss-client-name">Arsh / University Friend</div>
-                <div class="ss-client-quote">"Let's book it. And my friends also want to have a reading with you!"</div>
-              </div>
-            </div>
-
-            <!-- Multi-Session Collage Card -->
-            <div class="screenshot-card" data-category="all campus clarity" data-lightbox-src="assets/testimonials/testimonial-collage.jpeg" data-lightbox-caption="Collage of verified client feedback and appointment confirmations.">
-              <img src="assets/testimonials/testimonial-collage.jpeg" alt="Testimonial collage" class="screenshot-img-thumb" loading="lazy">
-              <div class="screenshot-card-overlay">
-                <div class="ss-client-name">Verified Feedbacks</div>
-                <div class="ss-client-quote">Multiple messages reflecting guidance, trust, and repeat consultations.</div>
-              </div>
-            </div>
+              <a href="#choose-reading" class="discover-story-btn">
+                <span>Choose Your Reading</span>
+                <span>➔</span>
+              </a>
             </div>
 
           </div>
         </div>
 
+        <!-- Visual Representations of Interpretive Approach -->
+        <section class="approach-representation-wrap" aria-label="Visual Representations of Interpretive Approach">
+          <div class="approach-header">
+            <h3 class="approach-header-title">My Interpretive Approach</h3>
+            <p class="approach-header-subtitle">
+              Visual representations of the philosophical, psychological, and esoteric pillars woven into every reading.
+            </p>
+          </div>
+
+          <div class="approach-cards-grid">
+            
+            <!-- Pillar 1 -->
+            <article class="approach-card">
+              <div class="approach-card-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="4" y="2" width="16" height="20" rx="3"/>
+                  <circle cx="12" cy="9" r="3"/>
+                  <path d="M8 17h8"/>
+                </svg>
+              </div>
+              <h4 class="approach-card-title">Traditional Rider–Waite Tarot Symbolism</h4>
+              <p class="approach-card-desc">
+                Grounding each spread in traditional Hermetic iconography, historical archetypes, and elemental dignities (Fire, Water, Air, Earth).
+              </p>
+            </article>
+
+            <!-- Pillar 2 -->
+            <article class="approach-card">
+              <div class="approach-card-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 3a9 9 0 0 0-9 9c0 3.6 2.1 6.7 5.1 8.1.5.2.9-.2.9-.7v-2.5c0-.6.4-1.1 1-1.2A5 5 0 0 1 12 7a5 5 0 0 1 5 5c0 1.2-.5 2.3-1.2 3.1-.4.4-.3 1.1.2 1.4l1.8 1.1c2.4-1.6 3.9-4.3 3.9-7.3a9 9 0 0 0-9-9z"/>
+                  <circle cx="12" cy="12" r="2.5" fill="currentColor"/>
+                </svg>
+              </div>
+              <h4 class="approach-card-title">Jungian Psychology & Archetypes</h4>
+              <p class="approach-card-desc">
+                Viewing cards as universal psychological mirrors that reflect deep instinctual blueprints, complexes, and developmental phases.
+              </p>
+            </article>
+
+            <!-- Pillar 3 -->
+            <article class="approach-card">
+              <div class="approach-card-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M12 3v18"/>
+                  <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" opacity="0.3"/>
+                </svg>
+              </div>
+              <h4 class="approach-card-title">Collective Unconscious, Shadow & Individuation</h4>
+              <p class="approach-card-desc">
+                Integrating disowned shadow material and moving toward wholeness, self-sovereignty, and conscious personal individuation.
+              </p>
+            </article>
+
+            <!-- Pillar 4 -->
+            <article class="approach-card">
+              <div class="approach-card-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <polygon points="12,2 22,20 2,20"/>
+                  <circle cx="12" cy="13" r="3"/>
+                </svg>
+              </div>
+              <h4 class="approach-card-title">Hermetic Philosophy & Correspondences</h4>
+              <p class="approach-card-desc">
+                Applying eternal axioms ("As above, so below") alongside planetary, astrological, and numerological correspondences.
+              </p>
+            </article>
+
+            <!-- Pillar 5 -->
+            <article class="approach-card">
+              <div class="approach-card-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+                  <path d="M5 5l2 2M17 17l2 2M5 19l2-2M17 5l2 2"/>
+                </svg>
+              </div>
+              <h4 class="approach-card-title">Intuitive Interpretation & Symbolic Analysis</h4>
+              <p class="approach-card-desc">
+                Synthesizing analytical rigor with subtle psychic intuition, discerning the unique story alive in the imagery for each client.
+              </p>
+            </article>
+
+            <!-- Pillar 6 -->
+            <article class="approach-card">
+              <div class="approach-card-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="2" y="7" width="6" height="10" rx="1.5"/>
+                  <rect x="9" y="4" width="6" height="16" rx="1.5"/>
+                  <rect x="16" y="7" width="6" height="10" rx="1.5"/>
+                </svg>
+              </div>
+              <h4 class="approach-card-title">Contextual Understanding of Combinations</h4>
+              <p class="approach-card-desc">
+                Reading cards as an interconnected sacred mandala where adjacent cards converse, modify energies, and reveal root pathways.
+              </p>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- My Pictures at Work (Authentic Work Gallery) -->
+        <section class="work-pictures-wrap" aria-label="My Pictures at Work">
+          <div class="section-header-cosmic" style="margin-bottom: 2.5rem;">
+            <p class="section-eyebrow">✦ REAL-WORLD PRACTICE & SPREADS ✦</p>
+            <h3 class="section-heading-cosmic" style="font-size: clamp(1.8rem, 3.2vw, 2.6rem);">My Pictures at Work</h3>
+            <p class="section-subtext-cosmic">
+              Live reading sessions, university stalls at Chandigarh University, altar setups, singing bowls, and multi-deck spreads.
+            </p>
+          </div>
+
+          <div class="work-gallery-grid">
+            
+            <div class="work-photo-card" data-lightbox-src="assets/work/work1.jpeg" data-lightbox-caption="Smayra's sacred reading table with gold oracle cards, singing bowl, crystal sphere, and banner: 'The Conscious Blueprint Testing'.">
+              <img src="assets/work/work1.jpeg" alt="Smayra tarot reading table setup with singing bowl and cards" class="work-photo-img" loading="lazy">
+              <div class="work-photo-caption">
+                <div class="work-caption-title">The Reading Altar</div>
+                <div class="work-caption-sub">Singing bowl, crystals & archetype testing charts</div>
+              </div>
+            </div>
+
+            <div class="work-photo-card" data-lightbox-src="assets/work/work2.jpeg" data-lightbox-caption="Smayra conducting live campus readings with students at Chandigarh University.">
+              <img src="assets/work/work2.jpeg" alt="Smayra reading tarot for university students on campus" class="work-photo-img" loading="lazy">
+              <div class="work-photo-caption">
+                <div class="work-caption-title">Campus Consultations</div>
+                <div class="work-caption-sub">Live student sessions at Chandigarh University</div>
+              </div>
+            </div>
+
+            <div class="work-photo-card" data-lightbox-src="assets/work/work3.jpeg" data-lightbox-caption="Smayra's interactive campus stall: 'The Unconscious Blueprint' & 'Help! Kindly Make My Sad Friend Laugh!'.">
+              <img src="assets/work/work3.jpeg" alt="Interactive campus reading stall with banner" class="work-photo-img" loading="lazy">
+              <div class="work-photo-caption">
+                <div class="work-caption-title">The Unconscious Blueprint Stall</div>
+                <div class="work-caption-sub">Direct engagement with seekers exploring life questions</div>
+              </div>
+            </div>
+
+            <div class="work-photo-card" data-lightbox-src="assets/work/work4.jpeg" data-lightbox-caption="Smayra preparing the cards by candlelight with oracle deities on marble altar.">
+              <img src="assets/work/work4.jpeg" alt="Hands shuffling cards with candles on marble altar" class="work-photo-img" loading="lazy">
+              <div class="work-photo-caption">
+                <div class="work-caption-title">Candlelight Ritual</div>
+                <div class="work-caption-sub">Card preparation & energetic grounding</div>
+              </div>
+            </div>
+
+            <div class="work-photo-card" data-lightbox-src="assets/work/work5.jpeg" data-lightbox-caption="Detailed card interpretation session with Keepers of the Light oracle deck.">
+              <img src="assets/work/work5.jpeg" alt="Card reading with oracle cards on altar" class="work-photo-img" loading="lazy">
+              <div class="work-photo-caption">
+                <div class="work-caption-title">Archetypal Alignment</div>
+                <div class="work-caption-sub">Bridging tarot archetypes with oracle symbolism</div>
+              </div>
+            </div>
+
+            <div class="work-photo-card" data-lightbox-src="assets/work/work6.jpeg" data-lightbox-caption="Overhead layout of a master spread featuring The Sun, The Empress, The Hermit, and The Chariot.">
+              <img src="assets/work/work6.jpeg" alt="Comprehensive overhead tarot spread on table" class="work-photo-img" loading="lazy">
+              <div class="work-photo-caption">
+                <div class="work-caption-title">The Master Spread</div>
+                <div class="work-caption-sub">Comprehensive multi-card diagnostic mapping</div>
+              </div>
+            </div>
+
+            <div class="work-photo-card" data-lightbox-src="assets/work/work7.jpeg" data-lightbox-caption="Cleansing tarot decks with natural herbal incense smoke before consultation.">
+              <img src="assets/work/work7.jpeg" alt="Incense smoke cleansing cards on altar" class="work-photo-img" loading="lazy">
+              <div class="work-photo-caption">
+                <div class="work-caption-title">Incense Cleansing</div>
+                <div class="work-caption-sub">Purifying the reading space & decks</div>
+              </div>
+            </div>
+
+            <div class="work-photo-card" data-lightbox-src="assets/work/work8.jpeg" data-lightbox-caption="Unveiling the Wheel of Fortune and Six of Pentacles cards by candlelight.">
+              <img src="assets/work/work8.jpeg" alt="Reading with Wheel of Fortune card" class="work-photo-img" loading="lazy">
+              <div class="work-photo-caption">
+                <div class="work-caption-title">Wheel of Fortune</div>
+                <div class="work-caption-sub">Decoding karmic cycles & upcoming pivots</div>
+              </div>
+            </div>
+
+            <div class="work-photo-card" data-lightbox-src="assets/work/work9.jpeg" data-lightbox-caption="Smayra holding the Krishna 'Devotion' card during sacred altar contemplation.">
+              <img src="assets/work/work9.jpeg" alt="Holding Krishna devotion oracle card" class="work-photo-img" loading="lazy">
+              <div class="work-photo-caption">
+                <div class="work-caption-title">Sacred Contemplation</div>
+                <div class="work-caption-sub">Krishna Devotion card & altar energy</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Interactive Feature: "Shuffle a Card" -->
+        <section id="daily-draw" class="card-draw-section" style="margin-top: 3rem; border-radius: var(--radius-lg); background: rgba(13, 26, 51, 0.55);" aria-label="Interactive Card Draw">
+          <div class="draw-container">
+            <div class="editorial-badge" style="margin-bottom: 0.75rem;">
+              <span>✦</span>
+              <span>ORACLE OF THE UNCONSCIOUS</span>
+              <span>✦</span>
+            </div>
+
+            <h3 class="section-heading-cosmic" style="font-size: clamp(2rem, 3.6vw, 2.8rem);">
+              Shuffle a Card — Daily Archetype
+            </h3>
+
+            <p class="section-subtext-cosmic" style="max-width: 650px;">
+              Pause, take a slow breath, and click to shuffle. Let your subconscious mind connect with the archetype ready to speak to you today.
+            </p>
+
+            <div class="deck-altar-interactive">
+              <div class="tarot-card-flipper" title="Click to draw and flip your card">
+                <div class="tarot-card-inner">
+                  <!-- Card Back -->
+                  <div class="tarot-card-back">
+                    <div class="card-back-pattern">
+                      <span style="font-size: 2.2rem; color: var(--color-gold);">✦</span>
+                      <span style="font-family: var(--font-serif); font-size: 0.7rem; letter-spacing: 0.22em; color: var(--color-gold-light);">MY PSYCHE</span>
+                      <span style="font-size: 1.5rem; color: var(--color-gold-light);">☉ ☽</span>
+                    </div>
+                  </div>
+
+                  <!-- Card Front -->
+                  <div class="tarot-card-front">
+                    <div class="drawn-card-header">MAJOR ARCANA</div>
+                    <div class="drawn-card-glyph">☉</div>
+                    <div>
+                      <div class="drawn-card-name">The Sun</div>
+                      <div class="drawn-card-archetype">Vital Awakening</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button class="draw-btn-trigger">
+                <span>Shuffle & Draw Card</span>
+                <span>✦</span>
+              </button>
+
+              <!-- Dynamic Reading Result Box -->
+              <div class="card-reading-result">
+                <h4 class="reading-archetype-title">The Sun: The Conscious Awakening</h4>
+                <p class="reading-body-text">
+                  The Sun illuminates what was once obscured in subconscious shadows. It signals that your clarity is returning, your personal truth is solidifying, and the fragmented pieces of your journey are aligning into integrated confidence.
+                </p>
+                <p class="reading-prompt-action">
+                  <strong>Reflective Inquiry:</strong> Where have you been withholding your natural warmth or doubtfully dimming your inner light?
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </div>
-
-      <!-- Verbatim Quote Highlight Cards -->
-      <div class="verbatim-quotes-row">
-        
-        <div class="quote-bubble-card">
-          <p class="quote-text">
-            "I used to not believe in these things... But after getting it with Smayra, it is not the case. I actually was surprised with how accurately she interpreted it, it made me see my life properly which I was seeing in fragments."
-          </p>
-          <div class="quote-author">Arshaan</div>
-          <div class="quote-source">Verified WhatsApp Testimonial</div>
-        </div>
-
-        <div class="quote-bubble-card">
-          <p class="quote-text">
-            "Your last reading helped a lot and I saw real results after implementing the steps, I really am thanking you from my heart to help me see things clearly. Please can we have another session?"
-          </p>
-          <div class="quote-author">Shazar</div>
-          <div class="quote-source">University Campus Client</div>
-        </div>
-
-        <div class="quote-bubble-card">
-          <p class="quote-text">
-            "Thanks a lot for today's session. I really feel overwhelmed rn and I really needed this. I pray that you remain healthy and happy—it must be exhausting dealing with so many energies."
-          </p>
-          <div class="quote-author">Jahnavi</div>
-          <div class="quote-source">Private Consultation Follow-up</div>
-        </div>
-
-      </div>
-
     </section>
 
     <!-- =======================================================================
-         ALTAR & LIVE CAMPUS READINGS GALLERY
-         Authentic photography of Smayra's reading tables, altar, & sessions
+         SECTION 2: CLIENT TESTIMONIALS
+         "What My Clients Say" — Authentic video with audio and genuine screenshot proof
          ======================================================================= -->
-    <section id="altar-experiences" class="altar-gallery-section" aria-label="Altar & Campus Readings Gallery">
-      <div class="section-header-cosmic">
-        <p class="section-eyebrow">✦ REAL WORLD SANCTUARY ✦</p>
-        <h2 class="section-heading-cosmic">The Altar & Campus Readings</h2>
-        <p class="section-subtext-cosmic">
-          Glimpses into Smayra's sacred reading space, live consultations, and the tools of symbolic divination.
-        </p>
-      </div>
-
-      <div class="altar-masonry-grid">
+    <section id="client-testimonials" class="what-clients-say-section" aria-label="2. Client Testimonials">
+      <div class="testimonials-container">
         
-        <!-- Photo 1: University Reading Stall Action (Wide Card) -->
-        <div class="altar-photo-card wide-card span-2" data-lightbox-src="assets/images/smayra-reading-client.jpeg" data-lightbox-caption="Smayra conducting in-person readings for students on university campus with cards, singing bowl, and conscious blueprint chart.">
-          <img src="assets/images/smayra-reading-client.jpeg" alt="Smayra reading tarot for clients on campus" class="altar-photo-img" loading="lazy">
-          <div class="altar-photo-caption">
-            <h3 class="altar-caption-title">Live Campus Consultations</h3>
-            <p class="altar-caption-sub">Chandigarh University — Bridging psychology & tarot for seekers</p>
+        <header class="section-header-cosmic">
+          <div class="editorial-badge" style="margin-bottom: 0.85rem;">
+            <span>✦</span>
+            <span>SECTION 02 • AUTHENTIC FEEDBACK</span>
+            <span>✦</span>
           </div>
+          <h2 class="section-heading-cosmic">What My Clients Say</h2>
+          <p class="section-subtext-cosmic">
+            Genuine experiences, verified client conversations, and live video feedback from people who have sat for a reading.
+          </p>
+        </header>
+
+        <div class="testimonials-showcase-grid">
+          
+          <!-- Left Column: Video Testimonial with Audio -->
+          <div class="video-testimonial-card">
+            <div class="video-header-bar">
+              <span class="video-badge">
+                <span>●</span>
+                <span>CLIENT VIDEO TESTIMONIAL (WITH AUDIO)</span>
+              </span>
+              <span style="font-family: var(--font-sans); font-size: 0.75rem; color: var(--color-silver-moon);">Verified Client</span>
+            </div>
+
+            <div class="video-player-wrap">
+              <video 
+                controls 
+                preload="metadata"
+                poster="assets/work/work2.jpeg"
+                aria-label="Client video testimonial with audio for Smayra's tarot reading"
+              >
+                <source src="assets/video/testimonial1vedio.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+
+            <p class="video-footer-caption">
+              "A heartfelt client testimonial sharing the emotional clarity, grounding guidance, and real-life impact experienced after a private reading with Smayra."
+            </p>
+            <div class="video-author-name">✦ Client Video Reflection ✦</div>
+          </div>
+
+          <!-- Right Column: Authentic Screenshot Proofs -->
+          <div class="testimonials-gallery-col">
+            <div class="testimonial-tabs-bar">
+              <button class="test-tab-btn active" data-filter="all">All Messages</button>
+              <button class="test-tab-btn" data-filter="campus">Campus Sessions</button>
+              <button class="test-tab-btn" data-filter="clarity">Life & Relationship Clarity</button>
+            </div>
+
+            <div class="testimonial-screenshots-grid">
+              
+              <!-- Testimonial 5: Arshaan -->
+              <div class="screenshot-card" data-category="clarity" data-lightbox-src="assets/testimonials/testimonial5.jpeg" data-lightbox-caption="Arshaan: 'I used to not believe in these things and as I have seen some readers doing that. But after getting it with Smayra, it is not the case, I actually was surprised with the real reading and the meaning moreover how accurately she interpreted it, it actually made me see my life properly which I was seeing in fragments and I believe that tarot reading is actually effective when the right person does it and Smayra is the one for me. It was life changing for me.'">
+                <img src="assets/testimonials/testimonial5.jpeg" alt="Testimonial screenshot from Arshaan" class="screenshot-img-thumb" loading="lazy">
+                <div class="screenshot-card-overlay">
+                  <div class="ss-client-name">Arshaan</div>
+                  <div class="ss-client-quote">"It was life changing for me... made me see my life properly which I was seeing in fragments."</div>
+                </div>
+              </div>
+
+              <!-- Testimonial 3: Jahnavi -->
+              <div class="screenshot-card" data-category="clarity" data-lightbox-src="assets/testimonials/testimonial3.jpeg" data-lightbox-caption="Jahnavi: 'Hey thanks a lot for today's session. I really feel overwhelmed rn and I really needed this. I pray that you remain healthy and happy. It must be exhausting for you too dealing with so many energies.'">
+                <img src="assets/testimonials/testimonial3.jpeg" alt="Testimonial screenshot from Jahnavi" class="screenshot-img-thumb" loading="lazy">
+                <div class="screenshot-card-overlay">
+                  <div class="ss-client-name">Jahnavi</div>
+                  <div class="ss-client-quote">"I really feel overwhelmed rn and I really needed this... grateful for your energy."</div>
+                </div>
+              </div>
+
+              <!-- Testimonial 4: Drishti -->
+              <div class="screenshot-card" data-category="campus" data-lightbox-src="assets/testimonials/testimonial4.jpeg" data-lightbox-caption="Drishti: 'Heyy you did an excellent reading of ours today! Pls let me know whenever you'll be having a stall again.'">
+                <img src="assets/testimonials/testimonial4.jpeg" alt="Testimonial screenshot from Drishti" class="screenshot-img-thumb" loading="lazy">
+                <div class="screenshot-card-overlay">
+                  <div class="ss-client-name">Drishti</div>
+                  <div class="ss-client-quote">"You did an excellent reading of ours today! Let me know when you have a stall again."</div>
+                </div>
+              </div>
+
+              <!-- Testimonial 6: Shazar (Real Results) -->
+              <div class="screenshot-card" data-category="clarity campus" data-lightbox-src="assets/testimonials/testimonial6.jpeg" data-lightbox-caption="Shazar: 'Hy smayra, your last reading helped a lot and I saw real results after implementing the steps, I really am thanking you from my heart to help me see things clearly. Please can we have another session, or can we do some membership plan?'">
+                <img src="assets/testimonials/testimonial6.jpeg" alt="Testimonial screenshot discussing real results" class="screenshot-img-thumb" loading="lazy">
+                <div class="screenshot-card-overlay">
+                  <div class="ss-client-name">Shazar / Campus Client</div>
+                  <div class="ss-client-quote">"I saw real results after implementing the steps... Can we book another session?"</div>
+                </div>
+              </div>
+
+              <!-- Testimonial 7: Arsh (Friends booking) -->
+              <div class="screenshot-card" data-category="campus" data-lightbox-src="assets/testimonials/testimonial7.jpeg" data-lightbox-caption="Arsh: 'Ok I will make time, let's book it. And my friends also want to have a reading. Ok sure let's meet at fountain area.'">
+                <img src="assets/testimonials/testimonial7.jpeg" alt="Testimonial screenshot booking friend reading" class="screenshot-img-thumb" loading="lazy">
+                <div class="screenshot-card-overlay">
+                  <div class="ss-client-name">Arsh / University Client</div>
+                  <div class="ss-client-quote">"Let's book it. And my friends also want to have a reading with you!"</div>
+                </div>
+              </div>
+
+              <!-- Testimonial Collage -->
+              <div class="screenshot-card" data-category="all campus clarity" data-lightbox-src="assets/testimonials/testimonial-collage.jpeg" data-lightbox-caption="Verified client conversations and feedback confirmations archive.">
+                <img src="assets/testimonials/testimonial-collage.jpeg" alt="Testimonial collage" class="screenshot-img-thumb" loading="lazy">
+                <div class="screenshot-card-overlay">
+                  <div class="ss-client-name">Verified Feedbacks</div>
+                  <div class="ss-client-quote">Multiple messages reflecting guidance, trust, and repeat consultations.</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
 
-        <!-- Photo 2: Reading Table Setup with Thangka & Singing Bowl -->
-        <div class="altar-photo-card" data-lightbox-src="assets/altar/altar-table-setup.jpeg" data-lightbox-caption="Smayra's reading table with gold oracle cards, singing bowl, crystal sphere, and banner: 'The Conscious Blueprint Testing'.">
-          <img src="assets/altar/altar-table-setup.jpeg" alt="Altar table setup with gold cards and singing bowl" class="altar-photo-img" loading="lazy">
-          <div class="altar-photo-caption">
-            <h3 class="altar-caption-title">The Sacred Table</h3>
-            <p class="altar-caption-sub">Singing bowl, crystals, and archetype banners</p>
+        <!-- Verbatim Quote Highlight Cards -->
+        <div class="verbatim-quotes-row">
+          
+          <div class="quote-bubble-card">
+            <p class="quote-text">
+              "I used to not believe in these things... But after getting it with Smayra, it is not the case, I actually was surprised with how accurately she interpreted it, it actually made me see my life properly which I was seeing in fragments."
+            </p>
+            <div class="quote-author">Arshaan</div>
+            <div class="quote-source">Verified WhatsApp Testimonial</div>
           </div>
-        </div>
 
-        <!-- Photo 3: Full Altar Spread with Tarot & Oracle Cards -->
-        <div class="altar-photo-card" data-lightbox-src="assets/altar/altar-full-spread.jpeg" data-lightbox-caption="Overhead layout of a comprehensive card spread with The Sun, Empress, Hermit, Chariot, and Keepers of the Light oracle deck.">
-          <img src="assets/altar/altar-full-spread.jpeg" alt="Full multi-card tarot spread on marble table" class="altar-photo-img" loading="lazy">
-          <div class="altar-photo-caption">
-            <h3 class="altar-caption-title">The Grand Spread</h3>
-            <p class="altar-caption-sub">Major Arcana & elemental diagnostic spread</p>
+          <div class="quote-bubble-card">
+            <p class="quote-text">
+              "Your last reading helped a lot and I saw real results after implementing the steps, I really am thanking you from my heart to help me see things clearly. Please can we have another session?"
+            </p>
+            <div class="quote-author">Shazar</div>
+            <div class="quote-source">University Campus Client</div>
           </div>
-        </div>
 
-        <!-- Photo 4: Holding Krishna Oracle Card -->
-        <div class="altar-photo-card" data-lightbox-src="assets/altar/altar-krishna-oracle.jpeg" data-lightbox-caption="Smayra holding the Krishna 'Devotion' card during a sacred altar meditation session.">
-          <img src="assets/altar/altar-krishna-oracle.jpeg" alt="Holding Krishna oracle card on marble table" class="altar-photo-img" loading="lazy">
-          <div class="altar-photo-caption">
-            <h3 class="altar-caption-title">Sacred Deities & Archetypes</h3>
-            <p class="altar-caption-sub">Oracle cards bridging Eastern mysticism and archetypal philosophy</p>
+          <div class="quote-bubble-card">
+            <p class="quote-text">
+              "Thanks a lot for today's session. I really feel overwhelmed rn and I really needed this. I pray that you remain healthy and happy. It must be exhausting for you too dealing with so many energies."
+            </p>
+            <div class="quote-author">Jahnavi</div>
+            <div class="quote-source">Private Consultation Follow-up</div>
           </div>
-        </div>
 
-        <!-- Photo 5: Incense Ritual on Altar -->
-        <div class="altar-photo-card" data-lightbox-src="assets/altar/altar-incense.jpeg" data-lightbox-caption="Cleansing the reading cards with burning herbal incense and candlelight.">
-          <img src="assets/altar/altar-incense.jpeg" alt="Incense smoke cleansing cards on altar" class="altar-photo-img" loading="lazy">
-          <div class="altar-photo-caption">
-            <h3 class="altar-caption-title">Incense & Energetic Cleansing</h3>
-            <p class="altar-caption-sub">Preparing the energetic field before each consultation</p>
-          </div>
-        </div>
-
-        <!-- Photo 6: Wheel of Fortune & Hierophant Spread -->
-        <div class="altar-photo-card" data-lightbox-src="assets/altar/altar-wheel-fortune.jpeg" data-lightbox-caption="Smayra's hands revealing the Wheel of Fortune and Six of Pentacles cards by candlelight.">
-          <img src="assets/altar/altar-wheel-fortune.jpeg" alt="Reading with Wheel of Fortune card" class="altar-photo-img" loading="lazy">
-          <div class="altar-photo-caption">
-            <h3 class="altar-caption-title">Cycles & Fortune</h3>
-            <p class="altar-caption-sub">Unraveling karmic cycles and personal choices</p>
-          </div>
         </div>
 
       </div>
     </section>
 
     <!-- =======================================================================
-         PRIVATE READINGS & BOOKING SANCTUM
-         Detailed offerings & direct connect (WhatsApp & Instagram)
+         SECTION 3: BOOK A READING
+         "Choose Your Reading" — Interactive service catalog, 32 individual cards,
+         central configuration & email booking
          ======================================================================= -->
-    <section id="booking-sanctum" class="booking-sanctum-section" aria-label="Private Readings & Booking">
-      
-      <div class="section-header-cosmic">
-        <p class="section-eyebrow">✦ STEP INTO THE SANCTUARY ✦</p>
-        <h2 class="section-heading-cosmic">Private Readings with Smayra</h2>
-        <p class="section-subtext-cosmic">
-          Tailored one-on-one sessions addressing your questions with psychological clarity, warmth, and depth.
-        </p>
-      </div>
-
-      <div class="readings-offerings-grid">
+    <section id="choose-reading" class="choose-reading-section" aria-label="3. Book a Reading">
+      <div class="about-me-container">
         
-        <!-- Tier 1 -->
-        <div class="reading-tier-card">
-          <div>
-            <h3 class="tier-title">The Subconscious Blueprint</h3>
-            <div class="tier-duration">✦ 45 MINUTES • ONLINE OR CAMPUS ✦</div>
-            <p class="tier-desc">
-              Ideal for targeted questions regarding relationships, career crossroads, or emotional stagnation. Identifies the subconscious narrative behind the dynamic.
-            </p>
-            <ul class="tier-features-list">
-              <li class="tier-feature-item">In-depth 5-Card Subconscious Spread</li>
-              <li class="tier-feature-item">Singing bowl grounding preparation</li>
-              <li class="tier-feature-item">Jungian shadow & obstacle analysis</li>
-              <li class="tier-feature-item">Personalized voice/written summary</li>
-            </ul>
+        <header class="section-header-cosmic">
+          <div class="editorial-badge" style="margin-bottom: 0.85rem;">
+            <span>✦</span>
+            <span>SECTION 03 • BOOK A READING</span>
+            <span>✦</span>
           </div>
-          <div class="tier-actions-row">
-            <a href="mailto:samayraasipaya@gmail.com?subject=Order%20Reading:%20The%20Subconscious%20Blueprint%20(45%20min)&body=Hello%20Smayra,%0A%0AI%20would%20like%20to%20order%20The%20Subconscious%20Blueprint%20reading%20session.%0A%0AName:%20%0APreferred%20Format%20(Online%20/%20Campus):%20%0APreferred%20Date%20%26%20Time:%20%0AMy%20Questions:%20" class="tier-action-btn email-tier-btn">
-              <span>✉️ Order via Email</span>
-            </a>
-            <a href="https://wa.me/?text=Hello%20Smayra,%20I%20would%20like%20to%20book%20The%20Subconscious%20Blueprint%20(45%20min)%20reading%20session." target="_blank" class="tier-action-btn wa-tier-btn">
-              <span>💬 WhatsApp</span>
-            </a>
+          <h2 class="section-heading-cosmic">Choose Your Reading</h2>
+          <p class="section-subtext-cosmic">
+            Every reading is approached individually, with attention to your questions, circumstances and the deeper themes reflected in the cards. Choose the reading that resonates with what you would like to explore.
+          </p>
+        </header>
+
+        <!-- Category Filter Tabs -->
+        <nav class="reading-category-nav" aria-label="Reading Categories">
+          <button class="category-tab-pill active" data-category="all">
+            <span>All Readings</span>
+            <span class="category-pill-count">32</span>
+          </button>
+          <button class="category-tab-pill" data-category="love">
+            <span>Love & Relationships</span>
+            <span class="category-pill-count">8</span>
+          </button>
+          <button class="category-tab-pill" data-category="career">
+            <span>Career & Finance</span>
+            <span class="category-pill-count">6</span>
+          </button>
+          <button class="category-tab-pill" data-category="growth">
+            <span>Personal Growth</span>
+            <span class="category-pill-count">6</span>
+          </button>
+          <button class="category-tab-pill" data-category="spirituality">
+            <span>Spirituality</span>
+            <span class="category-pill-count">4</span>
+          </button>
+          <button class="category-tab-pill" data-category="general">
+            <span>General Readings</span>
+            <span class="category-pill-count">8</span>
+          </button>
+        </nav>
+
+        <!-- 32 Service Cards Container (Rendered dynamically from central READINGS_DATA) -->
+        <div id="readings-catalog-grid" class="readings-service-grid">
+          <!-- Populated by JavaScript -->
+        </div>
+
+        <!-- Booking Information Note -->
+        <div class="booking-info-note-wrap">
+          <p class="booking-note-text">
+            "All readings are personalised according to your questions and circumstances. Once your booking request is received, I will review it and respond with confirmation and further instructions. Please provide sufficient context to help me understand what you would like to explore."
+          </p>
+          <div class="booking-availability-sub">
+            ✦ All readings are subject to availability ✦
           </div>
         </div>
 
-        <!-- Tier 2 (Featured) -->
-        <div class="reading-tier-card featured-tier">
-          <span class="tier-badge">MOST POPULAR</span>
-          <div>
-            <h3 class="tier-title">The Complete Psychological Mirror</h3>
-            <div class="tier-duration">✦ 60 MINUTES • COMPREHENSIVE ✦</div>
-            <p class="tier-desc">
-              Our signature session. A holistic Celtic Cross & Astrology integration exploring all layers: conscious desires, subconscious fears, relational dynamics, and optimal future paths.
-            </p>
-            <ul class="tier-features-list">
-              <li class="tier-feature-item">Full 10-Card Celtic Cross Diagnostic</li>
-              <li class="tier-feature-item">Astrological Sun/Moon transit alignment</li>
-              <li class="tier-feature-item">Actionable psychological homework</li>
-              <li class="tier-feature-item">Follow-up support & session recording</li>
-            </ul>
-          </div>
-          <div class="tier-actions-row">
-            <a href="mailto:samayraasipaya@gmail.com?subject=Order%20Reading:%20The%20Complete%20Psychological%20Mirror%20(60%20min)&body=Hello%20Smayra,%0A%0AI%20would%20love%20to%20order%20The%20Complete%20Psychological%20Mirror%20session.%0A%0AName:%20%0APreferred%20Format%20(Online%20/%20Campus):%20%0APreferred%20Date%20%26%20Time:%20%0AMy%20Questions:%20" class="tier-action-btn email-tier-btn">
-              <span>✉️ Order via Email</span>
-            </a>
-            <a href="https://wa.me/?text=Hello%20Smayra,%20I%20would%20love%20to%20book%20The%20Complete%20Psychological%20Mirror%20(60%20min)%20session%20with%20you." target="_blank" class="tier-action-btn wa-tier-btn">
-              <span>💬 WhatsApp</span>
-            </a>
-          </div>
-        </div>
+        <!-- Direct Connect Quick Actions -->
+        <div class="direct-connect-banner" style="margin-top: 3.5rem;">
+          <h3 class="connect-heading">Have Questions Before Booking?</h3>
+          <p class="connect-subtext">
+            Reach out directly to Smayra via email or WhatsApp:
+          </p>
 
-        <!-- Tier 3 -->
-        <div class="reading-tier-card">
-          <div>
-            <h3 class="tier-title">Your Year, Unfolded</h3>
-            <div class="tier-duration">✦ 75 MINUTES • ANNUAL FORECAST ✦</div>
-            <p class="tier-desc">
-              A comprehensive 12-month celestial roadmap. Maps your dominant archetype for the year, quarterly milestones, and astrological pivot points for proactive decision-making.
-            </p>
-            <ul class="tier-features-list">
-              <li class="tier-feature-item">12-Card Solar Zodiac Roadmap</li>
-              <li class="tier-feature-item">Archetype of the Year analysis</li>
-              <li class="tier-feature-item">Key lunar dates & transit guide</li>
-              <li class="tier-feature-item">High-resolution spread keepsake photo</li>
-            </ul>
-          </div>
-          <div class="tier-actions-row">
-            <a href="mailto:samayraasipaya@gmail.com?subject=Order%20Reading:%20Your%20Year%20Unfolded%20Annual%20Forecast&body=Hello%20Smayra,%0A%0AI%20would%20love%20to%20order%20Your%20Year,%20Unfolded%20forecast%20reading.%0A%0AName:%20%0ADate%20of%20Birth%20(for%20planetary%20roadmap):%20%0APreferred%20Date%20%26%20Time:%20" class="tier-action-btn email-tier-btn">
-              <span>✉️ Order via Email</span>
+          <div class="connect-buttons-row">
+            <a href="mailto:samayraasipaya@gmail.com?subject=Inquiry%20/%20Question%20about%20Tarot%20Readings" class="email-connect-btn">
+              <span>✉️</span>
+              <span>Email: samayraasipaya@gmail.com</span>
             </a>
-            <a href="https://wa.me/?text=Hello%20Smayra,%20I%20would%20love%20to%20book%20The%20Year%20Ahead%20Unfolded%20forecast%20reading." target="_blank" class="tier-action-btn wa-tier-btn">
-              <span>💬 WhatsApp</span>
+
+            <a href="https://wa.me/?text=Hello%20Smayra,%20I%20have%20a%20question%20regarding%20booking%20a%20tarot%20reading." target="_blank" rel="noopener noreferrer" class="whatsapp-connect-btn">
+              <span>💬</span>
+              <span>Message on WhatsApp</span>
+            </a>
+
+            <a href="https://instagram.com/smayra.sipayaa" target="_blank" rel="noopener noreferrer" class="instagram-connect-btn">
+              <span>📸</span>
+              <span>DM on Instagram @smayra.sipayaa</span>
             </a>
           </div>
         </div>
 
       </div>
-
-      <!-- Quick Connect Banner with WhatsApp & Instagram -->
-      <div class="direct-connect-banner">
-        <h3 class="connect-heading">Ready to Order a Private Reading?</h3>
-        <p class="connect-subtext">
-          Whether you want an in-person session at Chandigarh University or a global online consultation, place your order directly via email or message:
-        </p>
-
-        <div class="connect-buttons-row">
-          <a href="mailto:samayraasipaya@gmail.com?subject=Order%20Tarot%20Reading%20Session%20with%20Smayra&body=Hello%20Smayra,%0A%0AI%20would%20like%20to%20order%20and%20book%20a%20private%20tarot%20reading%20session%20with%20you.%0A%0ASession%20Type:%20%0APreferred%20Date%20/%20Time:%20%0AYour%20Questions%20/%20Context:%20%0A%0AThank%20you!" class="email-connect-btn">
-            <span>✉️</span>
-            <span>Order via Email (samayraasipaya@gmail.com)</span>
-          </a>
-          <a href="https://wa.me/?text=Hello%20Smayra,%20I%20am%20interested%20in%20booking%20a%20tarot%20reading%20session%20with%20you." target="_blank" rel="noopener noreferrer" class="whatsapp-connect-btn">
-            <span>💬</span>
-            <span>Message on WhatsApp</span>
-          </a>
-
-          <a href="https://instagram.com/smayra.sipayaa" target="_blank" rel="noopener noreferrer" class="instagram-connect-btn">
-            <span>📸</span>
-            <span>DM on Instagram @smayra.sipayaa</span>
-          </a>
-        </div>
-      </div>
-
     </section>
   </main>
+
+  <!-- =======================================================================
+       SLIDE-OUT CART DRAWER & EMAIL BOOKING MODAL
+       ======================================================================= -->
+  <div id="cart-drawer-modal" class="cart-drawer-backdrop" aria-hidden="true">
+    <div class="cart-drawer">
+      
+      <div class="cart-drawer-header">
+        <h3 class="cart-drawer-title">Your Reading Cart</h3>
+        <button id="cart-close-btn" class="modal-close-btn" aria-label="Close cart drawer" style="position: static;">✕</button>
+      </div>
+
+      <div class="cart-drawer-body">
+        
+        <!-- Cart Items List -->
+        <div>
+          <div style="font-family: var(--font-serif); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-gold-luminous); margin-bottom: 0.75rem;">
+            Selected Readings
+          </div>
+          <div id="cart-items-container" class="cart-items-list">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+
+        <!-- Total Bar -->
+        <div class="cart-total-bar">
+          <span class="cart-total-label">Total Amount:</span>
+          <span id="cart-total-amount" class="cart-total-amount">₹0</span>
+        </div>
+
+        <!-- Client Inquiry Form -->
+        <form class="cart-inquiry-form" onsubmit="return false;">
+          <div style="font-family: var(--font-serif); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-gold-luminous);">
+            Your Information & Question
+          </div>
+
+          <div class="cart-form-group">
+            <label class="cart-form-label" for="booking-client-name">Your Full Name *</label>
+            <input type="text" id="booking-client-name" class="cart-form-input" placeholder="e.g. Aditi Sharma" required>
+          </div>
+
+          <div class="cart-form-group">
+            <label class="cart-form-label" for="booking-client-email">Email Address *</label>
+            <input type="email" id="booking-client-email" class="cart-form-input" placeholder="e.g. aditi@example.com" required>
+          </div>
+
+          <div class="cart-form-group">
+            <label class="cart-form-label" for="booking-client-dob">Date of Birth (Optional)</label>
+            <input type="text" id="booking-client-dob" class="cart-form-input" placeholder="e.g. 14 August 1999">
+          </div>
+
+          <div class="cart-form-group">
+            <label class="cart-form-label" for="booking-client-question">What would you like to explore? *</label>
+            <textarea id="booking-client-question" class="cart-form-textarea" placeholder="Please describe your core question or concern..."></textarea>
+          </div>
+
+          <div class="cart-form-group">
+            <label class="cart-form-label" for="booking-client-context">Additional Background / Context</label>
+            <textarea id="booking-client-context" class="cart-form-textarea" placeholder="Provide background circumstances to help connect the cards accurately..."></textarea>
+          </div>
+
+          <div class="cart-form-group">
+            <label class="cart-form-label" for="booking-client-specific">Specific Questions to Address</label>
+            <input type="text" id="booking-client-specific" class="cart-form-input" placeholder="Any particular sub-questions?">
+          </div>
+
+          <div class="cart-form-group">
+            <label class="cart-form-label" for="booking-client-format">Preferred Reading Format</label>
+            <select id="booking-client-format" class="cart-form-select">
+              <option value="Online Video Consultation">Online Video Consultation (Google Meet / Zoom)</option>
+              <option value="Audio Recording & Spread Photo">Audio Recording & High-Resolution Spread Photo</option>
+              <option value="Comprehensive Written PDF">Comprehensive Written Analysis (PDF)</option>
+              <option value="Chandigarh University Campus Session">In-Person Session (Chandigarh University Campus)</option>
+            </select>
+          </div>
+        </form>
+
+      </div>
+
+      <div class="cart-drawer-footer">
+        <button id="cart-checkout-email" class="cart-checkout-email-btn">
+          <span>✉️ Send Booking Request via Email</span>
+        </button>
+
+        <button id="cart-copy-details" class="cart-copy-details-btn">
+          <span>📋 Copy Booking Details to Clipboard</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="cart-toast" class="cart-toast"></div>
+
+  <!-- =======================================================================
+       IMAGE LIGHTBOX MODAL
+       ======================================================================= -->
+  <div id="lightbox-modal" class="celestial-modal-backdrop" aria-hidden="true">
+    <div class="lightbox-modal-content">
+      <button id="lightbox-close" class="modal-close-btn" aria-label="Close image preview">✕</button>
+      <img id="lightbox-image" src="" alt="Full view" class="lightbox-img-full">
+      <p id="lightbox-caption" class="lightbox-caption-text"></p>
+    </div>
+  </div>
 
   <!-- =======================================================================
        CELESTIAL FOOTER
@@ -928,33 +895,30 @@
       </div>
 
       <div class="footer-nav-col">
-        <h4 class="footer-col-heading">The Seven Realms</h4>
-        <a href="#enter-my-world" class="footer-link">The Tarot Library</a>
-        <a href="#enter-my-world" class="footer-link">Astrology & Celestial Studies</a>
-        <a href="#psyche-editorial" class="footer-link">The Human Psyche</a>
-        <a href="#enter-my-world" class="footer-link">Tarot Spreads & Interpretations</a>
-        <a href="#booking-sanctum" class="footer-link">Private Readings</a>
-        <a href="#enter-my-world" class="footer-link">Your Year, Unfolded</a>
-        <a href="#altar-experiences" class="footer-link">My Work & Experiences</a>
+        <h4 class="footer-col-heading">Content Sections</h4>
+        <a href="#about-me" class="footer-link">1. About Me</a>
+        <a href="#client-testimonials" class="footer-link">2. Client Testimonials</a>
+        <a href="#choose-reading" class="footer-link">3. Book a Reading</a>
+        <a href="#daily-draw" class="footer-link">Shuffle a Card</a>
       </div>
 
       <div class="footer-nav-col">
-        <h4 class="footer-col-heading">Experiences & Stories</h4>
-        <a href="#daily-draw" class="footer-link">Interactive Card Draw</a>
-        <a href="#testimonials" class="footer-link">Client Video Testimonial</a>
-        <a href="#testimonials" class="footer-link">WhatsApp Feedback Archive</a>
-        <a href="#altar-experiences" class="footer-link">University Campus Stalls</a>
-        <a href="https://instagram.com/smayra.sipayaa" target="_blank" class="footer-link">Instagram: @smayra.sipayaa</a>
+        <h4 class="footer-col-heading">Reading Categories</h4>
+        <a href="#choose-reading" class="footer-link">Love & Relationships (₹699 - ₹999)</a>
+        <a href="#choose-reading" class="footer-link">Career & Finance (₹699 - ₹999)</a>
+        <a href="#choose-reading" class="footer-link">Personal Growth (₹999 - ₹1,299)</a>
+        <a href="#choose-reading" class="footer-link">Spirituality (₹799 - ₹1,299)</a>
+        <a href="#choose-reading" class="footer-link">General Readings (₹399 - ₹2,499)</a>
       </div>
 
       <div class="footer-nav-col">
         <h4 class="footer-col-heading">Order & Contact</h4>
         <p style="font-size: 0.88rem; color: rgba(229, 235, 245, 0.7); line-height: 1.7;">
-          Order Email:<br>
+          Direct Booking Email:<br>
           <a href="mailto:samayraasipaya@gmail.com" style="color: var(--color-gold-light); text-decoration: underline;">samayraasipaya@gmail.com</a><br><br>
           Online Readings: Worldwide<br>
           Campus Readings: Chandigarh University<br>
-          Hours: By Appointment
+          Instagram: <a href="https://instagram.com/smayra.sipayaa" target="_blank" style="color: var(--color-gold-light);">@smayra.sipayaa</a>
         </p>
       </div>
 
@@ -970,29 +934,6 @@
       </a>
     </div>
   </footer>
-
-  <!-- =======================================================================
-       IMAGE LIGHTBOX MODAL
-       ======================================================================= -->
-  <div id="lightbox-modal" class="celestial-modal-backdrop" aria-hidden="true">
-    <div class="lightbox-modal-content">
-      <button id="lightbox-close" class="modal-close-btn" aria-label="Close image preview">✕</button>
-      <img id="lightbox-image" src="" alt="Full view" class="lightbox-img-full">
-      <p id="lightbox-caption" class="lightbox-caption-text"></p>
-    </div>
-  </div>
-
-  <!-- =======================================================================
-       DETAILS & STORY MODAL
-       ======================================================================= -->
-  <div id="details-modal" class="celestial-modal-backdrop" aria-hidden="true">
-    <div class="celestial-modal-card">
-      <button id="modal-close" class="modal-close-btn" aria-label="Close details modal">✕</button>
-      <h3 id="modal-title" style="font-family: var(--font-display); font-size: 1.8rem; color: var(--color-gold-light); margin-bottom: 0.4rem;"></h3>
-      <p id="modal-subtitle" style="font-family: var(--font-editorial); font-size: 1.15rem; font-style: italic; color: var(--color-silver-moon); margin-bottom: 1.5rem;"></p>
-      <div id="modal-body" style="font-family: var(--font-sans); color: rgba(229, 235, 245, 0.88); line-height: 1.8;"></div>
-    </div>
-  </div>
 
   <script src="js/main.js"></script>
 </body>
