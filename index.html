@@ -853,13 +853,29 @@
       </div>
 
       <div class="cart-drawer-footer">
-        <button id="cart-checkout-email" class="cart-checkout-email-btn">
-          <span>✉️ Send Booking Request via Email</span>
+        <!-- Option 1: Send via Gmail (Opens directly pre-filled in Gmail web or mobile app) -->
+        <button id="cart-checkout-gmail" class="cart-checkout-gmail-btn" type="button" aria-label="Send booking via Gmail">
+          <span>✉️ Send via Gmail (Opens Pre-Filled)</span>
         </button>
 
-        <button id="cart-copy-details" class="cart-copy-details-btn">
-          <span>📋 Copy Booking Details to Clipboard</span>
+        <!-- Option 2: Send via Default Mail App (Apple Mail, Outlook, Mailto) -->
+        <button id="cart-checkout-email" class="cart-checkout-default-btn" type="button" aria-label="Send booking via Default Mail app">
+          <span>📧 Send via Default Mail App (Apple Mail / Outlook)</span>
         </button>
+
+        <!-- Option 3 & 4: WhatsApp & Copy Details -->
+        <div class="cart-secondary-actions-row">
+          <button id="cart-checkout-whatsapp" class="cart-wa-btn" type="button" aria-label="Send booking details via WhatsApp">
+            <span>💬 WhatsApp</span>
+          </button>
+          <button id="cart-copy-details" class="cart-copy-details-btn" type="button" aria-label="Copy booking details to clipboard">
+            <span>📋 Copy Details</span>
+          </button>
+        </div>
+
+        <p class="cart-email-note">
+          Orders are sent directly to <strong style="color: var(--color-gold-light);">samayraasipaya@gmail.com</strong>
+        </p>
       </div>
 
     </div>

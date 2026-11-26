@@ -761,6 +761,8 @@ function initCartSystem() {
   const cartTotalAmount = document.getElementById('cart-total-amount');
   const cartCountBadges = document.querySelectorAll('.cart-count-badge');
   const checkoutBtn = document.getElementById('cart-checkout-email');
+  const gmailBtn = document.getElementById('cart-checkout-gmail');
+  const waBtn = document.getElementById('cart-checkout-whatsapp');
   const copyBtn = document.getElementById('cart-copy-details');
   const toast = document.getElementById('cart-toast');
 
@@ -847,6 +849,8 @@ function initCartSystem() {
     }
   }
 
+  window.openCartDrawer = openCart;
+
   function closeCart() {
     if (cartBackdrop) {
       cartBackdrop.classList.remove('open');
@@ -919,33 +923,101 @@ Thank you. I look forward to hearing from you.`;
     return { subject, body };
   }
 
-  // Send Email Button
-  if (checkoutBtn) {
-    checkoutBtn.addEventListener('click', () => {
+  // Robust Clipboard Copy with legacy fallback
+  function copyTextToClipboard(text, successMsg) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(successMsg || '✓ Copied to clipboard!');
+      }).catch(() => {
+        fallbackCopy(text, successMsg);
+      });
+    } else {
+      fallbackCopy(text, successMsg);
+    }
+  }
+
+  function fallbackCopy(text, successMsg) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    ta.style.top = '0';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    try {
+      document.execCommand('copy');
+      showToast(successMsg || '✓ Copied to clipboard!');
+    } catch (err) {
+      showToast('✓ Details ready to send!');
+    }
+    document.body.removeChild(ta);
+  }
+
+  // 1. Send via Gmail (Opens directly pre-filled in Gmail Web / App)
+  if (gmailBtn) {
+    gmailBtn.addEventListener('click', () => {
       if (cartItems.length === 0) {
-        alert('Please add at least one reading to your cart before proceeding.');
+        showToast('Please add at least one reading to your cart first.');
         return;
       }
-
       const { subject, body } = generateBookingEmailContent();
-      const mailtoUrl = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailtoUrl;
+      const fullText = `To: ${BUSINESS_EMAIL}\nSubject: ${subject}\n\n${body}`;
+      copyTextToClipboard(fullText, 'Opening Gmail! Details also copied to clipboard.');
+
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(BUSINESS_EMAIL)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.open(gmailUrl, '_blank');
     });
   }
 
-  // Copy Details Button
-  if (copyBtn) {
-    copyBtn.addEventListener('click', () => {
+  // 2. Send via Default Mail App (Mailto via clean anchor trigger)
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener('click', () => {
       if (cartItems.length === 0) {
-        alert('Your cart is empty.');
+        showToast('Please add at least one reading to your cart first.');
+        return;
+      }
+
+      const { subject, body } = generateBookingEmailContent();
+      const fullText = `To: ${BUSINESS_EMAIL}\nSubject: ${subject}\n\n${body}`;
+      copyTextToClipboard(fullText, 'Opening mail app! Details also copied to clipboard.');
+
+      const mailtoUrl = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const a = document.createElement('a');
+      a.href = mailtoUrl;
+      a.target = '_blank';
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => a.remove(), 100);
+    });
+  }
+
+  // 3. Send via WhatsApp
+  if (waBtn) {
+    waBtn.addEventListener('click', () => {
+      if (cartItems.length === 0) {
+        showToast('Please add at least one reading to your cart first.');
         return;
       }
       const { subject, body } = generateBookingEmailContent();
-      const fullText = `Subject: ${subject}\n\nTo: ${BUSINESS_EMAIL}\n\n${body}`;
+      const waText = `*${subject}*\n\n${body}`;
+      copyTextToClipboard(waText, 'Opening WhatsApp with your booking details!');
 
-      navigator.clipboard.writeText(fullText).then(() => {
-        showToast('Booking details copied! You can paste in Gmail or WhatsApp.');
-      });
+      const waUrl = `https://wa.me/?text=${encodeURIComponent(waText)}`;
+      window.open(waUrl, '_blank');
+    });
+  }
+
+  // 4. Copy Details Button
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      if (cartItems.length === 0) {
+        showToast('Your cart is empty.');
+        return;
+      }
+      const { subject, body } = generateBookingEmailContent();
+      const fullText = `To: ${BUSINESS_EMAIL}\nSubject: ${subject}\n\n${body}`;
+      copyTextToClipboard(fullText, '✓ Booking details copied! Ready to paste into any email or chat.');
     });
   }
 
@@ -955,42 +1027,20 @@ Thank you. I look forward to hearing from you.`;
     toast.classList.add('show');
     setTimeout(() => {
       toast.classList.remove('show');
-    }, 3200);
+    }, 3800);
   }
 }
 
-// Direct mailto for single reading
+// "Book Now" Button on Reading Cards: Adds to cart & opens cart drawer
 window.openDirectMailto = function (reading) {
-  const subject = `Tarot Reading Booking – ${reading.name}`;
-  const body = `Hello,
-
-I would like to book a tarot reading.
-
-Reading Details
-
-Selected Reading: ${reading.name}
-Price: ₹${reading.price.toLocaleString('en-IN')}
-
-My Information
-
-Name: 
-Email Address: 
-Date of Birth (Optional): 
-
-About My Reading
-
-What would you like to explore?
-Please describe your question or concern:
-
-Additional background or context:
-
-Are there any specific questions you would like addressed?
-
-Preferred Reading Format:
-
-Thank you. I look forward to hearing from you.`;
-
-  window.location.href = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  if (window.addToCart) window.addToCart(reading.id);
+  if (window.openCartDrawer) window.openCartDrawer();
+  const toast = document.getElementById('cart-toast');
+  if (toast) {
+    toast.textContent = `Selected "${reading.name}"! Fill out your details below to send your booking.`;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3800);
+  }
 };
 
 /* ==========================================================================
